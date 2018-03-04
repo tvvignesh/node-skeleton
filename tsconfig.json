@@ -1,0 +1,26 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": "./"
+        // "paths": {
+        //     "*": ["./src/*"]
+        // }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

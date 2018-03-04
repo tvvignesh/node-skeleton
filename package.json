@@ -1,0 +1,37 @@
+{
+  "name": "skelserver",
+  "version": "1.0.0",
+  "description": "Skeleton Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
+    "start-dev": "npm run build && cross-env NODE_ENV=development node dist/server.js",
+    "start-alpha": "npm run build && cross-env NODE_ENV=alpha node dist/server.js",
+    "start-secure": "npm run build && cross-env NODE_ENV=secure node dist/server.js"
+  },
+  "author": "Vignesh T.V.",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "express": "^4.16.2",
+    "glob": "^7.1.2",
+    "helmet": "^3.9.0",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.10",
+    "moment": "^2.20.1",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.0-rc.4",
+    "winston": "^2.4.0",
+    "xml": "^1.0.1",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/express": "^4.11.0",
+    "@types/node": "^9.4.6",
+    "cross-env": "^5.1.3"
+  }
+}
