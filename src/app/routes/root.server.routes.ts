@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports = function(app) {
+module.exports = function (app) {
   // var authCtrl = require('../../app/controllers/auth.server.controller');
 
   app.get('/', function (req, res) {

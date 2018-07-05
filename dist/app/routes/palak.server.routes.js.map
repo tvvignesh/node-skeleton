@@ -1,0 +1,1 @@
+{"version":3,"file":"palak.server.routes.js","sourceRoot":"","sources":["../../../src/app/routes/palak.server.routes.ts"],"names":[],"mappings":"AAAA,YAAY,CAAC;AAGb,MAAM,CAAC,OAAO,GAAG,UAAU,GAAG;IAG5B,GAAG,CAAC,GAAG,CAAC,QAAQ,EAAE,UAAU,GAAG,EAAE,GAAG;QAClC,GAAG,CAAC,IAAI,CAAC,cAAc,CAAC,CAAC;IAC3B,CAAC,CAAC,CAAC;AAKL,CAAC,CAAC"}
