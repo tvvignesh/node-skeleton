@@ -1,6 +1,7 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
+        "declaration": true,
         "target": "es6",
         "module": "commonjs",
         "noImplicitAny": false,
@@ -11,16 +12,18 @@
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
         "outDir": "dist",
-        "baseUrl": "./"
-        // "paths": {
-        //     "*": ["./src/*"]
-        // }
+        "baseUrl": "./",
+        "lib": [
+            "es2015",
+            "esnext.asynciterable"
+        ]
     },
     "include": [
         "src/**/*"
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "**/*.spec.ts",
+        "**/*.d.ts"
     ]
 }

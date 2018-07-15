@@ -5,7 +5,7 @@ module.exports = {
         description: 'Skeleton server',
         url: ''
     },
-    port: process.env.NODEJS_PORT || 123,
+    port: process.env.NODEJS_PORT || 9000,
     hostname: process.env.NODEJS_IP || 'localhost',
     db: {
         mssql: {

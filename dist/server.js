@@ -8,5 +8,5 @@ process.on('uncaughtException', function (err) {
 });
 app.get('server').listen(config.port, config.hostname);
 exports = module.exports = app;
-console.log('Server started on ' + config.hostname + ':' + config.port + ' in ' + process.env.NODE_ENV + ' mode');
+console.log(config.app.title + ' started on ' + config.hostname + ':' + config.port + ' in ' + process.env.NODE_ENV + ' mode on ' + new Date().toISOString());
 //# sourceMappingURL=server.js.map

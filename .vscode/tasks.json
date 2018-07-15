@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "tsc-watch",
+            "type": "shell",
+            "command": "npm",
+            "group": "build",
+            "args": [
+                "run",
+                "watch"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "isBackground": true
+        },
+        {
+            "label": "Run-eslint",
+            "type": "shell",
+            "linux": {
+                // "command": "./node_modules/.bin/eslint -f stylish ./**"
+                "command": "./node_modules/.bin/eslint  --ext=.js,.ts . --fix"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "isBackground": true
+        }
+    ]
+}

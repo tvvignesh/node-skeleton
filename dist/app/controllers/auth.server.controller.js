@@ -1,5 +1,6 @@
+var config = require('../../config/config');
 exports.authenticate = function (req, res, next) {
-    if (req.headers.authorization === 'mysecrettoken') {
+    if (req.headers.authorization === config.authorization) {
         next();
     }
     else {
