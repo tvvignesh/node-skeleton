@@ -1,6 +1,6 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, etc.
 
 ## Deployment instructions
 
@@ -26,6 +26,11 @@ A boilerplate to help start Node.js projects quickly and effectively. Packaged w
 ## Building the code
 
 1. Run `npm run build` to build the typescript code, copy relevant files
+
+## Logging Middleware
+
+Winston logging can be added by using the winston library.
+`logger.log('error', 'Internal server error - ' + err.stack, err);`
 
 ### Contributors
 
