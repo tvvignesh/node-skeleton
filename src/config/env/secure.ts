@@ -8,6 +8,7 @@ module.exports = {
 	},
 	port: process.env.NODEJS_PORT || 8088,
 	hostname: process.env.NODEJS_IP || 'localhost',
+	authorization: 'mysecrettoken',
 	db: {
 		mssql: {
 			root: {
