@@ -2,10 +2,12 @@ version: "3"
 
 services:
   app-server:
+    env_file:
+     - ./.env
     build:
       context: .
       args: 
-        app_port: 8085
+        app_port: ${NODEJS_PORT}
       #   app_db: app-db:30000
       #   app_env: alpha
     command: npm run debug
@@ -14,24 +16,19 @@ services:
     volumes:
       - ./dist:/app/server/dist
     ports:
-      - "8085:8085"
-      - "5858:5858"
-    links:
-      - app-db
-    environment:
-     - NODEJS_PORT=8085
-     - NODE_ENV=development
-     - MONGO_HOST=app-db:27017
-     - NODEJS_IP=0.0.0.0
+      - "${SEVER_PORT}"
+      - "${DEBUG_PORT}"
+    # links:
+    #   - app-db
       
-  app-db:
-    container_name: app-db
-    image: mongo:3.6.5
-    ports:
-      - "30000:27017"
-    volumes:
-      - mongodata:/data/db
+  # app-db:
+  #   container_name: app-db
+  #   image: mongo:3.6.5
+  #   ports:
+  #     - "30000:27017"
+  #   volumes:
+  #     - mongodata:/data/db
 
-volumes:
-  mongodata:
-      driver: local
+# volumes:
+#   mongodata:
+#       driver: local

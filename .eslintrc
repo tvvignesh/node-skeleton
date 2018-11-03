@@ -15,7 +15,81 @@
         }
     },
     "rules": {
+        "array-bracket-spacing": [
+            "error",
+            "always"
+        ],
+        "func-call-spacing": [
+            "warn"
+        ],
+        "block-spacing": [
+            "warn"
+        ],
         "camelcase": "warn",
+        "eqeqeq": "warn",
+        "indent": [
+            "warn",
+            4,
+            {
+                "ignoreComments": true
+            }
+        ],
+        "newcap": true,
+        "regexp": true,
+        "no-trailing-spaces": "warn",
+        "wrap-iife": [
+            "warn",
+            "outside"
+        ],
+        "no-mixed-spaces-and-tabs": [
+            "error",
+            "smart-tabs"
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ],
+        "no-unreachable": "warn",
+        "latedef": true,
+        "max-len": [
+            "warn",
+            {
+                "code": 120,
+                "comments": 100,
+                "ignoreTrailingComments": true
+            }
+        ],
+        "no-var": [
+            "warn"
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": {
+                    "consistent": true,
+                    "minProperties": 2,
+                    "multiline": true
+                },
+                "ObjectPattern": {
+                    "consistent": true,
+                    "multiline": true
+                },
+                "ImportDeclaration": {
+                    "consistent": true,
+                    "multiline": true
+                },
+                "ExportDeclaration": {
+                    "consistent": true,
+                    "minProperties": 2,
+                    "multiline": true
+                }
+            }
+        ],
+        "undef": true,
+        "unused": true,
+        "eqnull": true,
         "require-jsdoc": [
             "error",
             {

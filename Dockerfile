@@ -12,5 +12,4 @@ RUN npm install -g typescript nodemon
 RUN npm install
 RUN npm run-script build
 EXPOSE $app_port
-#EXPOSE 8085
 CMD [ "npm", "start" ]
