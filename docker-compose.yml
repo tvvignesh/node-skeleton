@@ -8,6 +8,7 @@ services:
       context: .
       args: 
         app_port: ${NODEJS_PORT}
+        debug_port: ${DEBUG}
       #   app_db: app-db:30000
       #   app_env: alpha
     command: npm run debug

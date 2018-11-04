@@ -7,22 +7,24 @@
 let fs = require('fs'),
     http = require('http'),
     https = require('https'),
-    express = require('express'),
+    path = require('path');
+
+let express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     helmet = require('helmet'),
     mustacheExpress = require('mustache-express'),
-    config = require('./config'),
-    path = require('path'),
-    xss = require('xss-clean'),
-    logger = require('../config/logger');
+    xss = require('xss-clean');
+
+let config = require('./config'),
+    logger = require('./logger');
 
 // let schema = require('../schema/schema').schema;
 
 // import {schema as schema} from '../schema/schema';
 
-module.exports = function (db) {
+module.exports = function () {
 
     // Initialize express app
     let app = express();
@@ -73,7 +75,7 @@ module.exports = function (db) {
     app.use(methodOverride());
 
     // Use helmet to secure Express headers
-    //app.use(helmet.frameguard());
+    // app.use(helmet.frameguard());
     app.use(helmet({
         frameguard: false
     }));

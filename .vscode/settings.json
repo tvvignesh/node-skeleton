@@ -9,6 +9,5 @@
     "typescript.format.insertSpaceAfterConstructor": true,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true
 }

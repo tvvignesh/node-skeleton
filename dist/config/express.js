@@ -1,7 +1,9 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-let fs = require('fs'), http = require('http'), https = require('https'), express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), config = require('./config'), path = require('path'), xss = require('xss-clean'), logger = require('../config/logger');
-module.exports = function (db) {
+let fs = require('fs'), http = require('http'), https = require('https'), path = require('path');
+let express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), xss = require('xss-clean');
+let config = require('./config'), logger = require('./logger');
+module.exports = function () {
     let app = express();
     app.locals.title = config.app.title;
     app.locals.description = config.app.description;

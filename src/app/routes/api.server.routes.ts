@@ -11,6 +11,6 @@ module.exports = function (app) {
     app.route('/metrics').get(getMetrics);
 
     // Set params if needed
-    //app.param('Id', apiCtrl.func);
+    // app.param('Id', apiCtrl.func);
 
 };

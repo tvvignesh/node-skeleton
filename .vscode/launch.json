@@ -27,10 +27,11 @@
                 "run-script",
                 "docker-debug"
             ],
-            "port": 5858,
+            "port": 9229,
             "restart": true,
             "timeout": 60000,
             "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/app/server",
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ],
@@ -43,10 +44,10 @@
             "name": "Attach to Docker",
             "preLaunchTask": "tsc-watch",
             "protocol": "auto",
-            "port": 5858,
+            "port": 9229,
             "restart": true,
             "localRoot": "${workspaceFolder}",
-            "remoteRoot": "/server",
+            "remoteRoot": "/app/server",
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
@@ -63,7 +64,7 @@
                 "debug"
             ],
             "restart": true,
-            "port": 5858,
+            "port": 9229,
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "outFiles": [

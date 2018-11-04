@@ -1,0 +1,17 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        ".git",
+        "node_modules/**/node_modules",
+        "logs/",
+        "pm2/",
+        "dist/"
+    ],
+    "verbose": true,
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "ts,js,html,json,yml",
+    "exec": "npm run build && node --harmony --inspect=0.0.0.0 ./dist/server.js",
+    "delay": "2500"
+}

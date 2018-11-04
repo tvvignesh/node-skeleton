@@ -1,4 +1,5 @@
 ARG app_port
+ARG debug_port
 # ARG app_db
 
 FROM node:11.0.0
@@ -12,4 +13,5 @@ RUN npm install -g typescript nodemon
 RUN npm install
 RUN npm run-script build
 EXPOSE $app_port
+EXPOSE $debug_port
 CMD [ "npm", "start" ]

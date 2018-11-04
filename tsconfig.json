@@ -1,7 +1,7 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "declaration": true,
+        "declaration": false,
         "target": "es6",
         "module": "commonjs",
         "noImplicitAny": false,

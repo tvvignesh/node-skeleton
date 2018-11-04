@@ -4,15 +4,16 @@
     "description": "Node Skeleton",
     "main": "dist/server.js",
     "scripts": {
-        "watch": "tsc -w -p ./",
-        "debug": "nodemon --watch ./dist --inspect=0.0.0.0:5858 --nolazy ./dist/server.js",
-        "docker-debug": "docker-compose up",
-        "test": "echo \"Error: no test specified\" && exit 1",
         "build": "npx tsc && copyfiles -u 1 src/app/**/*.html src/app/**/*.css src/app/public/**/*.* src/app/views/**/*.* dist/",
-        "start": "node ./dist/server.js",
-        "start-dev": "npm run build && cross-env NODE_ENV=development node ./dist/server.js",
-        "start-alpha": "npm run build && cross-env NODE_ENV=alpha node ./dist/server.js",
-        "start-secure": "npm run build && cross-env NODE_ENV=secure node ./dist/server.js"
+        "watch": "tsc -w -p ./",
+        "debug": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon --inspect=0.0.0.0 --nolazy ./dist/server.js",
+        "docker-debug": "npm run build && docker-compose up",
+        "lint": "npx eslint --ext=.ts .",
+        "test": "npx tsc && ava ./dist/tests",
+        "start": "node --inspect=0.0.0.0 ./dist/server.js",
+        "start-dev": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon ./dist/server.js",
+        "start-alpha": "npm run build && npm run lint && cross-env NODE_ENV=alpha node ./dist/server.js",
+        "start-secure": "npm run build && npm run lint && cross-env NODE_ENV=secure node ./dist/server.js"
     },
     "author": "Vignesh T.V.",
     "license": "MIT",
@@ -30,17 +31,20 @@
         "prom-client": "^11.1.3",
         "winston": "^3.1.0",
         "xml": "^1.0.1",
-        "xss-clean": "^0.1.1"
+        "xss-clean": "^0.1.1",
+        "cross-env": "^5.2.0"
     },
     "devDependencies": {
         "@types/body-parser": "^1.17.0",
         "@types/express": "^4.16.0",
         "@types/node": "^10.12.0",
+        "acorn": "^6.0.3",
+        "ava": "1.0.0-rc.1",
         "copyfiles": "^2.1.0",
-        "cross-env": "^5.2.0",
         "eslint": "^5.8.0",
         "eslint-config-google": "^0.11.0",
         "eslint-plugin-typescript": "^0.12.0",
+        "nodemon": "^1.18.5",
         "typescript": "^3.1.3",
         "typescript-eslint-parser": "^20.0.0"
     }
