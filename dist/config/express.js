@@ -1,8 +1,8 @@
 'use strict';
-var fs = require('fs'), http = require('http'), https = require('https'), express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), config = require('./config'), path = require('path'), xss = require('xss-clean'), logger = require('winston');
-var schema = require('../schema/schema').schema;
+Object.defineProperty(exports, "__esModule", { value: true });
+let fs = require('fs'), http = require('http'), https = require('https'), express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), config = require('./config'), path = require('path'), xss = require('xss-clean'), logger = require('../config/logger');
 module.exports = function (db) {
-    var app = express();
+    let app = express();
     app.locals.title = config.app.title;
     app.locals.description = config.app.description;
     app.use(function (req, res, next) {
@@ -15,8 +15,9 @@ module.exports = function (db) {
         next();
     });
     app.set('showStackError', true);
-    app.set("view engine", "pug");
-    app.set("views", path.join(__dirname, "../app/views"));
+    app.engine('server.view.html', mustacheExpress());
+    app.set("view engine", "server.view.html");
+    app.set("views", path.join(__dirname, "../app/views/"));
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
         app.set('view cache', false);
@@ -53,26 +54,24 @@ module.exports = function (db) {
     config.getGlobbedFiles('./**/routes/**/*.js').forEach(function (routePath) {
         require(path.resolve(routePath))(app);
     });
-    app.use(function (err, req, res, next) {
-        if (!err)
-            return next();
-        console.error(err.stack);
-        logger.log('error', 'Internal server error - ' + err.stack, err);
-        res.status(500).render('500', {
-            error: err.stack
-        });
-    });
+    app.use(express.static(path.join(__dirname, "../app/public")));
     app.use(function (req, res) {
-        res.status(404).render('404', {
-            url: req.originalUrl,
-            error: 'Not Found'
+        logger.log('error', 'Page Not Found - ' + req.url, req.body || req.query);
+        res.render(path.join(__dirname, "../app/views/error/404"), {
+            head: {
+                title: 'Page Not Found'
+            },
+            content: {
+                title: 'OOPS!',
+                description: 'Page Not Found. Error Code: 404'
+            }
         });
     });
-    var server;
+    let server;
     if (process.env.NODE_ENV === 'secure') {
         console.log('Securely using https protocol');
-        var privateKey = fs.readFileSync('./config/sslcerts/key.pem', 'utf8');
-        var certificate = fs.readFileSync('./config/sslcerts/cert.pem', 'utf8');
+        let privateKey = fs.readFileSync('./config/sslcerts/key.pem', 'utf8');
+        let certificate = fs.readFileSync('./config/sslcerts/cert.pem', 'utf8');
         server = https.createServer({
             key: privateKey,
             cert: certificate

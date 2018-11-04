@@ -1,4 +1,4 @@
 node_modules/
 logs/*.log
-pm2-prod.json
-pm2-alpha.json
+pm2/pm2-prod.json
+pm2/pm2-alpha.json

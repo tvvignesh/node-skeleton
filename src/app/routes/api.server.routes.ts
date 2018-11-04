@@ -1,13 +1,16 @@
 'use strict';
 
-// import { authenticate } from '../controllers/auth.server.controller';
+import { getMetrics } from '../controllers/metrics.server.controller';
+import { authenticate } from '../controllers/auth.server.controller';
+import { helloWorld } from '../controllers/api.server.controller';
 
 module.exports = function (app) {
-    // var authCtrl = require('../../app/controllers/auth.server.controller');
 
-    // app.route('/api').post(authenticate, apiCtrl.loadDataToGeode);
+    app.route('/hello').post(authenticate, helloWorld);
 
-    // Finish with setting up the companyId param
+    app.route('/metrics').get(getMetrics);
+
+    // Set params if needed
     //app.param('Id', apiCtrl.func);
 
 };

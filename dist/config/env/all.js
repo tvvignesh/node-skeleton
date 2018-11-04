@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     app: {
-        title: 'Skeleton server',
-        description: 'Skeleton server boilerplate',
+        title: 'Node Skeleton',
+        description: 'Node Skeleton boilerplate',
         url: 'http://localhost'
     },
     port: process.env.NODEJS_PORT || 8081,

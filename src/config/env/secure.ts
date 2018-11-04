@@ -2,8 +2,8 @@
 
 module.exports = {
     app: {
-        title: 'Skeleton server',
-        description: 'Skeleton server',
+        title: 'Node Skeleton',
+        description: 'Node Skeleton',
         url: 'http://localhost:8085'
     },
     port: process.env.NODEJS_PORT || 8085,

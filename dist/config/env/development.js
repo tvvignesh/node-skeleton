@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     app: {
-        title: 'Skeleton server',
-        description: 'Skeleton server',
+        title: 'Node Skeleton',
+        description: 'Node Skeleton',
         url: 'http://localhost:8085'
     },
     port: process.env.NODEJS_PORT || 8085,
@@ -19,29 +19,6 @@ module.exports = {
                     trustedConnection: false
                 }
             }
-        },
-        geode: {
-            host: 'http://localhost:8111',
-            dbinfo: {
-                myregion: '/myregion'
-            }
-        },
-        sequelize: {
-            mydb: {
-                dialect: "mssql",
-                host: "",
-                username: "",
-                password: "",
-                database: "",
-                dialectOptions: {
-                    port: 1433
-                }
-            }
-        }
-    },
-    ai: {
-        wit: {
-            accessToken: ""
         }
     }
 };

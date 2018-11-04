@@ -12,10 +12,11 @@ let fs = require('fs'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     helmet = require('helmet'),
+    mustacheExpress = require('mustache-express'),
     config = require('./config'),
     path = require('path'),
     xss = require('xss-clean'),
-    logger = require('winston');
+    logger = require('../config/logger');
 
 // let schema = require('../schema/schema').schema;
 
@@ -43,9 +44,10 @@ module.exports = function (db) {
     // Showing stack errors
     app.set('showStackError', true);
 
-    // config
-    app.set("view engine", "pug");
-    app.set("views", path.join(__dirname, "../app/views"));
+    // Config View Engine
+    app.engine('server.view.html', mustacheExpress());
+    app.set("view engine", "server.view.html");
+    app.set("views", path.join(__dirname, "../app/views/"));
 
     // Environment dependent middleware
     if (process.env.NODE_ENV === 'development') {
@@ -94,28 +96,20 @@ module.exports = function (db) {
         require(path.resolve(routePath))(app);
     });
 
-    // Assume 'not found' in the error msgs is a 404. this is somewhat silly, but valid,
-    //you can do whatever you like, set properties, use instanceof etc.
-    app.use(function (err, req, res, next) {
-        // If the error object doesn't exists
-        if (!err) return next();
-
-        // Log it
-        console.error(err.stack);
-
-        logger.log('error', 'Internal server error - ' + err.stack, err);
-
-        // Error page
-        res.status(500).render('500', {
-            error: err.stack
-        });
-    });
+    // Config Public Folder for Static Content
+    app.use(express.static(path.join(__dirname, "../app/public")));
 
     // Assume 404 since no middleware responded
     app.use(function (req, res) {
-        res.status(404).render('404', {
-            url: req.originalUrl,
-            error: 'Not Found'
+        logger.log('error', 'Page Not Found - ' + req.url, req.body || req.query);
+        res.render(path.join(__dirname, "../app/views/error/404"), {
+            head: {
+                title: 'Page Not Found'
+            },
+            content: {
+                title: 'OOPS!',
+                description: 'Page Not Found. Error Code: 404'
+            }
         });
     });
 

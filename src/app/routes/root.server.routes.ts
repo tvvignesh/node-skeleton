@@ -4,10 +4,18 @@ module.exports = function (app) {
     // var authCtrl = require('../../app/controllers/auth.server.controller');
 
     app.get('/', function (req, res) {
-        res.send('Hello world!');
+        res.render('index', {
+            head: {
+                title: 'Hello World'
+            },
+            content: {
+                title: 'Hi there!',
+                description: 'You are all set up'
+            }
+        });
     });
 
-    // Finish with setting up the companyId param
+    // Set params if needed
     //app.param('Id', apiCtrl.func);
 
 };

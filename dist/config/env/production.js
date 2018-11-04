@@ -1,11 +1,11 @@
 'use strict';
 module.exports = {
     app: {
-        title: 'Skeleton server',
-        description: 'Skeleton server',
-        url: ''
+        title: 'Node Skeleton',
+        description: 'Node Skeleton',
+        url: 'http://localhost:8085'
     },
-    port: process.env.NODEJS_PORT || 9000,
+    port: process.env.NODEJS_PORT || 8085,
     hostname: process.env.NODEJS_IP || 'localhost',
     authorization: 'mysecrettoken',
     db: {
@@ -18,12 +18,7 @@ module.exports = {
                 options: {
                     trustedConnection: false
                 }
-            },
-        }
-    },
-    ai: {
-        wit: {
-            accessToken: ""
+            }
         }
     }
 };

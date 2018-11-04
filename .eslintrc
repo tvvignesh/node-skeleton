@@ -58,7 +58,8 @@
             {
                 "code": 120,
                 "comments": 100,
-                "ignoreTrailingComments": true
+                "ignoreTrailingComments": true,
+                "ignoreTemplateLiterals": true
             }
         ],
         "no-var": [
