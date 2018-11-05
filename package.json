@@ -8,17 +8,17 @@
         "url": "https://github.com/tvvignesh/node-skeleton.git"
     },
     "scripts": {
-        "build": "npx tsc && copyfiles -u 1 src/app/**/*.html src/app/**/*.css src/app/public/**/*.* src/app/views/**/*.* dist/",
+        "build": "npx tsc && npx copyfiles -u 1 src/app/**/*.html src/app/**/*.css src/app/public/**/*.* src/app/views/**/*.* dist/",
         "watch": "tsc -w -p ./",
-        "debug": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon --nolazy ./dist/server.js",
+        "debug": "npm run build && npm run lint && npx cross-env NODE_ENV=development nodemon --nolazy ./dist/server.js",
         "docker-debug": "npm run build && docker-compose up",
         "lint": "npx eslint --ext=.ts .",
         "test": "npx tsc && ava ./dist/tests",
         "document": "npx typedoc",
         "start": "node ./dist/server.js",
-        "start-dev": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon ./dist/server.js",
-        "start-alpha": "npm run build && npm run lint && cross-env NODE_ENV=alpha node ./dist/server.js",
-        "start-secure": "npm run build && npm run lint && cross-env NODE_ENV=secure node ./dist/server.js"
+        "start-dev": "npm run build && npm run lint && npx cross-env NODE_ENV=development nodemon ./dist/server.js",
+        "start-alpha": "npm run build && npm run lint && npx cross-env NODE_ENV=alpha node ./dist/server.js",
+        "start-secure": "npm run build && npm run lint && npx cross-env NODE_ENV=secure node ./dist/server.js"
     },
     "author": "Vignesh T.V.",
     "license": "MIT",

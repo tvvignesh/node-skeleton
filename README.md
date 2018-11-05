@@ -1,6 +1,6 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, etc.
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, etc.
 
 ## Motive behind this project
 
@@ -41,14 +41,29 @@ Winston logging can be added by using the winston library.
 
 You can place all your static files in the public directory and that will get served by the server directly
 
+## Exposing Metrics
+
+The project is bundled with prom-client to enable exporting the metrics to prometheus with ease. You can access the default metrics at "/metrics" endpoint
+
 ## Linting
 
 You can customize rules if needed using the .eslintrc file placed in the root directory. If you are using VSCode, you can have the ESLint extension installed.
+
+## Generate Documentation
+
+You can generate documentation based on your code by running `npm run document`. Once generated, you can find the documentation in the docs folder.
+
+## Running Tests
+
+You can run your tests by using `npm run test` command. The project is bundled with AVA as the test framework.
 
 ## Environmental Variables
 
 You can set up the environmental variables in the .env file and that will get used in files like docker-compose, Dockerfile, etc. In addition to this, you can set up the rest of the environmental configurations in `config/env/yourenv.ts` where yourenv can be anything and the respective configs will get loaded depending on env you set.
 
+## Compatibility
+
+Since this project uses all the latest features of the node ecosystem, it requires Node >= v10.0.0
 
 ## Contributors
 
