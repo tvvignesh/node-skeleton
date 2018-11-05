@@ -3,14 +3,19 @@
     "version": "1.0.0",
     "description": "Node Skeleton",
     "main": "dist/server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tvvignesh/node-skeleton.git"
+    },
     "scripts": {
         "build": "npx tsc && copyfiles -u 1 src/app/**/*.html src/app/**/*.css src/app/public/**/*.* src/app/views/**/*.* dist/",
         "watch": "tsc -w -p ./",
-        "debug": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon --inspect=0.0.0.0 --nolazy ./dist/server.js",
+        "debug": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon --nolazy ./dist/server.js",
         "docker-debug": "npm run build && docker-compose up",
         "lint": "npx eslint --ext=.ts .",
         "test": "npx tsc && ava ./dist/tests",
-        "start": "node --inspect=0.0.0.0 ./dist/server.js",
+        "document": "npx typedoc",
+        "start": "node ./dist/server.js",
         "start-dev": "npm run build && npm run lint && cross-env NODE_ENV=development nodemon ./dist/server.js",
         "start-alpha": "npm run build && npm run lint && cross-env NODE_ENV=alpha node ./dist/server.js",
         "start-secure": "npm run build && npm run lint && cross-env NODE_ENV=secure node ./dist/server.js"
@@ -45,6 +50,7 @@
         "eslint-config-google": "^0.11.0",
         "eslint-plugin-typescript": "^0.12.0",
         "nodemon": "^1.18.5",
+        "typedoc": "^0.13.0",
         "typescript": "^3.1.3",
         "typescript-eslint-parser": "^20.0.0"
     }
