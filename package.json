@@ -25,6 +25,7 @@
     "dependencies": {
         "body-parser": "^1.18.3",
         "chalk": "^2.4.1",
+        "cross-env": "^5.2.0",
         "express": "^4.16.4",
         "glob": "^7.1.3",
         "helmet": "^3.14.0",
@@ -34,10 +35,11 @@
         "morgan": "^1.9.1",
         "mustache-express": "^1.2.8",
         "prom-client": "^11.1.3",
+        "swagger-ui-express": "^4.0.1",
         "winston": "^3.1.0",
         "xml": "^1.0.1",
         "xss-clean": "^0.1.1",
-        "cross-env": "^5.2.0"
+        "yamljs": "^0.3.0"
     },
     "devDependencies": {
         "@types/body-parser": "^1.17.0",

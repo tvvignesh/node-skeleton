@@ -15,7 +15,9 @@ let express = require('express'),
     methodOverride = require('method-override'),
     helmet = require('helmet'),
     mustacheExpress = require('mustache-express'),
-    xss = require('xss-clean');
+    xss = require('xss-clean'),
+    swaggerUi = require('swagger-ui-express'),
+    YAML = require('yamljs');
 
 let config = require('./config'),
     logger = require('./logger');
@@ -92,6 +94,11 @@ module.exports = function () {
     });
 
     app.set('jsonp callback', true);
+
+    if (config.toggle.apidoc) {
+        const swaggerDocument = YAML.load(path.join(__dirname, "../../apidoc.yaml"));
+        app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    }
 
     // Globbing routing files
     config.getGlobbedFiles('./**/routes/**/*.js').forEach(function (routePath) {

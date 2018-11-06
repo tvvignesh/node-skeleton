@@ -9,6 +9,9 @@ module.exports = {
     port: process.env.NODEJS_PORT || 8085,
     hostname: process.env.NODEJS_IP || 'localhost',
     authorization: 'mysecrettoken',
+    toggle: {
+        apidoc: process.env.TOGGLE_APIDOC || true
+    },
     db: {
         mssql: {
             root: {

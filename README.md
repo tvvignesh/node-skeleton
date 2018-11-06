@@ -1,6 +1,6 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, etc.
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, OpenAPI/Swagger, etc.
 
 ## Motive behind this project
 
@@ -49,7 +49,11 @@ The project is bundled with prom-client to enable exporting the metrics to prome
 
 You can customize rules if needed using the .eslintrc file placed in the root directory. If you are using VSCode, you can have the ESLint extension installed.
 
-## Generate Documentation
+## Generate API Documentation (OpenAPI/Swagger)
+
+You can generate documentation site by providing details regarding all the endpoints in the `apidoc.yaml` file in the root and once done, you can start the server and your documentation will get exposed in `/api-docs` URL. You can use tools like [OpenAPI GUI](https://mermade.github.io/openapi-gui/) to help generate the YAML file for you.
+
+## Generate Code Documentation
 
 You can generate documentation based on your code by running `npm run document`. Once generated, you can find the documentation in the docs folder.
 

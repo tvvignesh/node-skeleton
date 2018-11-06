@@ -3,10 +3,8 @@
  * @param req Request
  * @param res Response
  */
-const helloWorld = function (req, res) {
+export const helloWorld = function (req, res) {
     return res.status(200).jsonp({
         message: 'Hello World'
     });
 };
-
-export { helloWorld };

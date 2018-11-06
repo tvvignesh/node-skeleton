@@ -63,9 +63,7 @@ initCounters();
 
 const mergedRegistries = client.Registry.merge([ register, client.register ]);
 
-const getMetrics = function (req, res) {
+export const getMetrics = function (req, res) {
     res.set('Content-Type', mergedRegistries.contentType);
     res.end(mergedRegistries.metrics());
 };
-
-export { getMetrics };

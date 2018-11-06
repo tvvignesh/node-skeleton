@@ -3,7 +3,7 @@ let config = require('../../config/config');
 /**
  * AUTHENTICATION MIDDLEWARE FUNCTION
  */
-const authenticate = function (req, res, next) {
+export const authenticate = function (req, res, next) {
     if (req.headers.authorization === config.authorization) {
         next();
     } else {
@@ -12,5 +12,3 @@ const authenticate = function (req, res, next) {
         });
     }
 };
-
-export { authenticate };
