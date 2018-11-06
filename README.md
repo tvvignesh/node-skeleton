@@ -6,6 +6,16 @@ A boilerplate to help start Node.js projects quickly and effectively. Packaged w
 
 Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else. 
 
+## Basic Concepts behind the architecture
+
+1. All the code you write resides within `src` folder and gets built when you start the server in `dist` folder.
+2. All configuration is stored against the respective environment in `src/config/env` folder and `.env` file in the root.
+3. All your navigation routes are placed in `src/app/routes` folder. You can place as many js files as you want within.
+4. All your logic is written in controllers placed within `src/app/controllers` folder.
+5. If you have utility functions which you will use across controllers, put them in `src/app/utils` folder.
+6. All the server side rendered template files are to be placed in `src/app/views` folder.
+7. All your static files and content is to be placed in the `public` folder.
+
 ## Deployment instructions
 
 ### Normal Installation
@@ -19,12 +29,12 @@ Having worked on a lot of node.js projects, I had to repetitively do the same ta
 
 ### Running with Docker
 
-1. Install Docker and Docker Compose
+1. Install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
 2. Run `docker-compose up` to get the containers installed and started.
 
 ### Running via PM2
 
-1. Install node.js and pm2
+1. Install node.js and [pm2](https://github.com/Unitech/pm2)
 2. CD to the pm2 directory
 3. Run `pm2 start pm2-dev.json` to start the development cluster
 
@@ -37,17 +47,19 @@ Having worked on a lot of node.js projects, I had to repetitively do the same ta
 Winston logging can be added by using the winston library.
 `logger.log('error', 'Internal server error - ' + err.stack, err);`
 
+By default, logging occurs in console in the development environment and gets written to files within logs folder in other environments.
+
 ## Static Files
 
-You can place all your static files in the public directory and that will get served by the server directly
+You can place all your static files in the `public` directory and that will get served by the server directly
 
 ## Exposing Metrics
 
-The project is bundled with prom-client to enable exporting the metrics to prometheus with ease. You can access the default metrics at "/metrics" endpoint
+The project is bundled with [prom-client](https://github.com/siimon/prom-client) to enable exporting the metrics to prometheus with ease. You can access the default metrics at "/metrics" endpoint. You can modify what you export in `src/app/controllers/metrics.server.controllers.ts`
 
 ## Linting
 
-You can customize rules if needed using the .eslintrc file placed in the root directory. If you are using VSCode, you can have the ESLint extension installed.
+You can customize rules if needed using the .eslintrc file placed in the root directory. If you are using VSCode, you can have the ESLint extension installed. While linting is run everytime you build/start the server, you can manually run it by `npm run lint`
 
 ## Generate API Documentation (OpenAPI/Swagger)
 
@@ -55,11 +67,11 @@ You can generate documentation site by providing details regarding all the endpo
 
 ## Generate Code Documentation
 
-You can generate documentation based on your code by running `npm run document`. Once generated, you can find the documentation in the docs folder.
+You can generate documentation based on your code by running `npm run document`. Once generated, you can find the documentation in the docs folder. See [this](http://typedoc.org/guides/doccomments/) to know how to document your code to be rendered by the doc generator.
 
 ## Running Tests
 
-You can run your tests by using `npm run test` command. The project is bundled with AVA as the test framework.
+You can run your tests by using `npm run test` command. The project is bundled with [AVA](https://github.com/avajs/ava) as the test framework.
 
 ## Environmental Variables
 
