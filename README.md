@@ -6,6 +6,8 @@ A boilerplate to help start Node.js projects quickly and effectively. Packaged w
 
 Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else. 
 
+You can find the article I wrote on this project here: [https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9](https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9)
+
 ## Basic Concepts behind the architecture
 
 1. All the code you write resides within `src` folder and gets built when you start the server in `dist` folder.
