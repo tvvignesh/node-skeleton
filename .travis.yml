@@ -1,0 +1,13 @@
+language: node_js
+sudo: required
+services:
+  - docker
+node_js:
+  - "11.0.0"
+jobs:
+  include:
+    - stage: unit
+      script:
+        - npm install
+        - npm run build
+        - npm run test

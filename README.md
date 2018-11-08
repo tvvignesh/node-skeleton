@@ -29,10 +29,18 @@ You can find the article I wrote on this project here: [https://medium.com/techa
 5. cd to the project directory and run tsc to build using typescript
 6. Run `npm run-script start-dev`
 
-### Running with Docker
+### Cloning & Running with Docker
 
 1. Install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
+2. Clone/Download the repository and CD to it
 2. Run `docker-compose up` to get the containers installed and started.
+
+### Pulling & Running from Docker Hub
+
+1. Pull the container from DockerHub with the command `docker pull tvvignesh/node-skeleton` (Add version if you want)
+
+2. Then, start the container using the command:
+`docker run -d -p 8085:8085 -p 9229:9229 -e NODEJS_PORT=8085 -e NODE_ENV=development -e NODEJS_IP=0.0.0.0 tvvignesh/node-skeleton`
 
 ### Running via PM2
 
