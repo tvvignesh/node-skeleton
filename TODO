@@ -1,12 +1,16 @@
 
 Todo:
-  ☐ Add documentation
+  ✔ Add documentation @done(18-11-09 01:18)
   ☐ Optimize Copyfiles
   ☐ Add Kubernetes Support
   ☐ Add GraphQL implementation
-  ☐ Add swagger documentation
-  ☐ Add test framework
+  ✔ Add swagger documentation @done(18-11-09 01:18)
+  ✔ Add test framework @done(18-11-09 01:17)
   ☐ Add passport implementation
   ☐ Add DB Connectors
   ☐ Add encryption for credentials in config
   ☐ Add envoy/istio support
+  ☐ Add Travis for CI/CD @started(18-11-09 01:19)
+  ☐ Add Jenkins for CI/CD
+  ☐ Add tests for the project components
+  ✔ Publish to DockerHub @done(18-11-09 01:22)
