@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let config = require('../../config/config');
-exports.authenticate = function (req, res, next) {
+const authenticate = function (req, res, next) {
     if (req.headers.authorization === config.authorization) {
         next();
     }
@@ -11,4 +11,5 @@ exports.authenticate = function (req, res, next) {
         });
     }
 };
+exports.authenticate = authenticate;
 //# sourceMappingURL=auth.server.controller.js.map

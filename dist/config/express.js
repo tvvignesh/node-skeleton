@@ -1,7 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 let fs = require('fs'), http = require('http'), https = require('https'), path = require('path');
-let express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), xss = require('xss-clean'), swaggerUi = require('swagger-ui-express'), YAML = require('yamljs');
+let express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), xss = require('xss-clean');
 let config = require('./config'), logger = require('./logger');
 module.exports = function () {
     let app = express();
@@ -53,10 +53,6 @@ module.exports = function () {
         next();
     });
     app.set('jsonp callback', true);
-    if (config.toggle.apidoc) {
-        const swaggerDocument = YAML.load(path.join(__dirname, "../../apidoc.yaml"));
-        app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-    }
     config.getGlobbedFiles('./**/routes/**/*.js').forEach(function (routePath) {
         require(path.resolve(routePath))(app);
     });
