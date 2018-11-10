@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let config = require('../../config/config');
-const authenticate = function (req, res, next) {
+const auth_utils_1 = require("../utils/auth.utils");
+exports.authenticate = function (req, res, next) {
     if (req.headers.authorization === config.authorization) {
         next();
     }
@@ -11,5 +12,47 @@ const authenticate = function (req, res, next) {
         });
     }
 };
-exports.authenticate = authenticate;
+exports.resolveToken = function (req, res, next) {
+    let token = req.headers.authorization;
+    let decoded = auth_utils_1.verifyJWT(token, {});
+    if (!decoded) {
+        return res.status(401).send({
+            message: 'Invalid access. Sign in / validate your token'
+        });
+    }
+    let shouldAllow = true;
+    console.log(decoded);
+    if (shouldAllow) {
+        next();
+    }
+    else {
+        return res.status(401).send({
+            message: 'Invalid access.'
+        });
+    }
+};
+exports.resolveSecret = function (req, res, next) {
+    let secret = req.headers.secret;
+    let shouldAllow = true;
+    if (shouldAllow && secret) {
+        next();
+    }
+    else {
+        return res.status(401).send({
+            message: 'Invalid access.'
+        });
+    }
+};
+exports.generateAPICredentials = function (req, res) {
+    let shouldAllow = true;
+    if (shouldAllow) {
+        let token = auth_utils_1.signJWT(req.body, {});
+        return res.status(200).jsonp({
+            token: token
+        });
+    }
+    return res.status(500).jsonp({
+        error: 'Cannot read end point credentials'
+    });
+};
 //# sourceMappingURL=auth.server.controller.js.map

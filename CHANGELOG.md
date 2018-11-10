@@ -6,5 +6,4 @@
 - Added Travis CI
 - Added DockerHub support (pull request #8 by tvvignesh)
 - Added CHANGELOG to track changes
-
-
+- Helper Utils and functions added for JWT

@@ -1,6 +1,6 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, OpenAPI/Swagger, etc.
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, OpenAPI/Swagger, etc.
 
 ## Motive behind this project
 
@@ -78,6 +78,12 @@ You can generate documentation site by providing details regarding all the endpo
 ## Generate Code Documentation
 
 You can generate documentation based on your code by running `npm run document`. Once generated, you can find the documentation in the docs folder. See [this](http://typedoc.org/guides/doccomments/) to know how to document your code to be rendered by the doc generator.
+
+## JWT Authentication
+
+Helpers Utilities for doing JWT authentication is added to `src/app/utils/auth.utils.ts` and controllers for the same in `src/app/controllers/auth.server.controller.ts`. The private and public keys are placed in the `creds` folder. You can generate your own by using tools like [this](http://travistidwell.com/jsencrypt/demo/).
+
+No database implementation has been made so far and hence you may need to add your own tables/collections, create users, store secret keys, etc. which is more of an implementation detail.
 
 ## Running Tests
 
