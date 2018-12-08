@@ -63,7 +63,7 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="node-skeleton">Node Skeleton</h1>
-				<p>A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, OpenAPI/Swagger, etc.</p>
+				<p>A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, OpenAPI/Swagger, etc.</p>
 				<h2 id="motive-behind-this-project">Motive behind this project</h2>
 				<p>Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else. </p>
 				<p>You can find the article I wrote on this project here: <a href="https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9">https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9</a></p>
@@ -87,10 +87,19 @@
 					<li>cd to the project directory and run tsc to build using typescript</li>
 					<li>Run <code>npm run-script start-dev</code></li>
 				</ol>
-				<h3 id="running-with-docker">Running with Docker</h3>
+				<h3 id="cloning-running-with-docker">Cloning &amp; Running with Docker</h3>
 				<ol>
 					<li>Install <a href="https://www.docker.com/">Docker</a> and <a href="https://docs.docker.com/compose/">Docker Compose</a></li>
+					<li>Clone/Download the repository and CD to it</li>
 					<li>Run <code>docker-compose up</code> to get the containers installed and started.</li>
+				</ol>
+				<h3 id="pulling-running-from-docker-hub">Pulling &amp; Running from Docker Hub</h3>
+				<ol>
+					<li><p>Pull the container from DockerHub with the command <code>docker pull tvvignesh/node-skeleton</code> (Add version if you want)</p>
+					</li>
+					<li><p>Then, start the container using the command:
+						<code>docker run -d -p 8085:8085 -p 9229:9229 -e NODEJS_PORT=8085 -e NODE_ENV=development -e NODEJS_IP=0.0.0.0 tvvignesh/node-skeleton</code></p>
+					</li>
 				</ol>
 				<h3 id="running-via-pm2">Running via PM2</h3>
 				<ol>
@@ -116,6 +125,9 @@
 				<p>You can generate documentation site by providing details regarding all the endpoints in the <code>apidoc.yaml</code> file in the root and once done, you can start the server and your documentation will get exposed in <code>/api-docs</code> URL. You can use tools like <a href="https://mermade.github.io/openapi-gui/">OpenAPI GUI</a> to help generate the YAML file for you.</p>
 				<h2 id="generate-code-documentation">Generate Code Documentation</h2>
 				<p>You can generate documentation based on your code by running <code>npm run document</code>. Once generated, you can find the documentation in the docs folder. See <a href="http://typedoc.org/guides/doccomments/">this</a> to know how to document your code to be rendered by the doc generator.</p>
+				<h2 id="jwt-authentication">JWT Authentication</h2>
+				<p>Helpers Utilities for doing JWT authentication is added to <code>src/app/utils/auth.utils.ts</code> and controllers for the same in <code>src/app/controllers/auth.server.controller.ts</code>. The private and public keys are placed in the <code>creds</code> folder. You can generate your own by using tools like <a href="http://travistidwell.com/jsencrypt/demo/">this</a>.</p>
+				<p>No database implementation has been made so far and hence you may need to add your own tables/collections, create users, store secret keys, etc. which is more of an implementation detail.</p>
 				<h2 id="running-tests">Running Tests</h2>
 				<p>You can run your tests by using <code>npm run test</code> command. The project is bundled with <a href="https://github.com/avajs/ava">AVA</a> as the test framework.</p>
 				<h2 id="environmental-variables">Environmental Variables</h2>
@@ -163,6 +175,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_app_routes_root_server_routes_.html">"app/routes/root.server.routes"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_app_utils_auth_utils_.html">"app/utils/auth.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_app_utils_main_utils_.html">"app/utils/main.utils"</a>

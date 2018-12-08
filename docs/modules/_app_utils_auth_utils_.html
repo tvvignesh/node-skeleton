@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;app/controllers/auth.server.controller&quot; | Documentation</title>
+	<title>&quot;app/utils/auth.utils&quot; | Documentation</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_app_controllers_auth_server_controller_.html">&quot;app/controllers/auth.server.controller&quot;</a>
+					<a href="_app_utils_auth_utils_.html">&quot;app/utils/auth.utils&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;app/controllers/auth.server.controller&quot;</h1>
+			<h1>External module &quot;app/utils/auth.utils&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,16 +71,20 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_controllers_auth_server_controller_.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_auth_utils_.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_auth_utils_.html#fs" class="tsd-kind-icon">fs</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_auth_utils_.html#jwt" class="tsd-kind-icon">jwt</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_auth_utils_.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_auth_utils_.html#privatekey" class="tsd-kind-icon">privateKEY</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_auth_utils_.html#publickey" class="tsd-kind-icon">publicKEY</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_controllers_auth_server_controller_.html#authenticate" class="tsd-kind-icon">authenticate</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_controllers_auth_server_controller_.html#generateapicredentials" class="tsd-kind-icon">generateAPICredentials</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_controllers_auth_server_controller_.html#resolvesecret" class="tsd-kind-icon">resolve<wbr>Secret</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_controllers_auth_server_controller_.html#resolvetoken" class="tsd-kind-icon">resolve<wbr>Token</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_utils_auth_utils_.html#decodejwt" class="tsd-kind-icon">decodeJWT</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_utils_auth_utils_.html#signjwt" class="tsd-kind-icon">signJWT</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_utils_auth_utils_.html#verifyjwt" class="tsd-kind-icon">verifyJWT</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,7 +98,57 @@
 					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;../../config/config&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/controllers/auth.server.controller.ts#L1">app/controllers/auth.server.controller.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L8">app/utils/auth.utils.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="fs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> fs</h3>
+					<div class="tsd-signature tsd-kind-icon">fs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;fs&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L4">app/utils/auth.utils.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="jwt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> jwt</h3>
+					<div class="tsd-signature tsd-kind-icon">jwt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;jsonwebtoken&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L6">app/utils/auth.utils.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;path&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L3">app/utils/auth.utils.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="privatekey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> privateKEY</h3>
+					<div class="tsd-signature tsd-kind-icon">privateKEY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;fs.readFileSync(path.join(__dirname, &quot;../../../creds/jwtRS512.key&quot;), &#x27;utf8&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L10">app/utils/auth.utils.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="publickey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> publicKEY</h3>
+					<div class="tsd-signature tsd-kind-icon">publicKEY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;fs.readFileSync(path.join(__dirname, &quot;../../../creds/jwtRS512.key.pub&quot;), &#x27;utf8&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L11">app/utils/auth.utils.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -102,33 +156,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="authenticate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> authenticate</h3>
+					<a name="decodejwt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> decodeJWT</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">authenticate<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, next<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">decodeJWT<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/controllers/auth.server.controller.ts#L8">app/controllers/auth.server.controller.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L56">app/utils/auth.utils.ts:56</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>AUTHENTICATION MIDDLEWARE FUNCTION</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>req: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>res: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>next: <span class="tsd-signature-type">any</span></h5>
+									<h5>token: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -136,34 +179,25 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="generateapicredentials" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> generateAPICredentials</h3>
+					<a name="signjwt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> signJWT</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">generateAPICredentials<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">signJWT<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, $Options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/controllers/auth.server.controller.ts#L79">app/controllers/auth.server.controller.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L13">app/utils/auth.utils.ts:13</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Generate JWT API Credentials after signing - Token &amp; Secret</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>req: <span class="tsd-signature-type">any</span></h5>
+									<h5>payload: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5>res: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-										</div>
-									</div>
+									<h5>$Options: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -171,75 +205,25 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="resolvesecret" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> resolve<wbr>Secret</h3>
+					<a name="verifyjwt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> verifyJWT</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Secret<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, next<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">verifyJWT<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, $Options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/controllers/auth.server.controller.ts#L57">app/controllers/auth.server.controller.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/utils/auth.utils.ts#L33">app/utils/auth.utils.ts:33</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Resolve JWT Secret to identify access rights</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>req: <span class="tsd-signature-type">any</span></h5>
+									<h5>token: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5>res: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>next: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="resolvetoken" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> resolve<wbr>Token</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Token<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, next<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/app/controllers/auth.server.controller.ts#L24">app/controllers/auth.server.controller.ts:24</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Resolve JWT Token Middleware to find the User info</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>req: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>res: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>next: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-										</div>
-									</div>
+									<h5>$Options: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -257,7 +241,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_app_controllers_api_server_controller_.html">"app/controllers/api.server.controller"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_app_controllers_auth_server_controller_.html">"app/controllers/auth.server.controller"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -272,7 +256,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_app_routes_root_server_routes_.html">"app/routes/root.server.routes"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_app_utils_auth_utils_.html">"app/utils/auth.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -319,19 +303,31 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_app_controllers_auth_server_controller_.html#config" class="tsd-kind-icon">config</a>
+						<a href="_app_utils_auth_utils_.html#config" class="tsd-kind-icon">config</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_auth_utils_.html#fs" class="tsd-kind-icon">fs</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_auth_utils_.html#jwt" class="tsd-kind-icon">jwt</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_auth_utils_.html#path" class="tsd-kind-icon">path</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_auth_utils_.html#privatekey" class="tsd-kind-icon">privateKEY</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_auth_utils_.html#publickey" class="tsd-kind-icon">publicKEY</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_app_controllers_auth_server_controller_.html#authenticate" class="tsd-kind-icon">authenticate</a>
+						<a href="_app_utils_auth_utils_.html#decodejwt" class="tsd-kind-icon">decodeJWT</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_app_controllers_auth_server_controller_.html#generateapicredentials" class="tsd-kind-icon">generateAPICredentials</a>
+						<a href="_app_utils_auth_utils_.html#signjwt" class="tsd-kind-icon">signJWT</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_app_controllers_auth_server_controller_.html#resolvesecret" class="tsd-kind-icon">resolve<wbr>Secret</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_app_controllers_auth_server_controller_.html#resolvetoken" class="tsd-kind-icon">resolve<wbr>Token</a>
+						<a href="_app_utils_auth_utils_.html#verifyjwt" class="tsd-kind-icon">verifyJWT</a>
 					</li>
 				</ul>
 			</nav>
