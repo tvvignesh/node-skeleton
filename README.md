@@ -42,6 +42,7 @@ You can find the article I wrote on this project here: [https://medium.com/techa
 2. Then, start the container using the command:
 `docker run -d -p 8085:8085 -p 9229:9229 -e NODEJS_PORT=8085 -e NODE_ENV=development -e NODEJS_IP=0.0.0.0 tvvignesh/node-skeleton`
 
+
 ### Running via PM2
 
 1. Install node.js and [pm2](https://github.com/Unitech/pm2)
