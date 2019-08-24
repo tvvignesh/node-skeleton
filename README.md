@@ -1,6 +1,6 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, OpenAPI/Swagger, etc.
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, Kubernetes, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, OpenAPI/Swagger, etc.
 
 ## Motive behind this project
 
