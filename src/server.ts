@@ -12,7 +12,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // Start the app by listening on <port>
-app.get('server').listen(config.port, config.hostname);
+app.get('server').listen(config.port);
 
 // Expose app
 exports = module.exports = app;
