@@ -62,12 +62,18 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="node-skeleton">Node Skeleton</h1>
-				<p>A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, OpenAPI/Swagger, etc.</p>
-				<h2 id="motive-behind-this-project">Motive behind this project</h2>
-				<p>Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else. </p>
+				<a href="#node-skeleton" id="node-skeleton" style="color: inherit; text-decoration: none;">
+					<h1>Node Skeleton</h1>
+				</a>
+				<p>A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, Kubernetes, PM2, Eslint, Prettier, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, Editorconfig, OpenAPI/Swagger, Jaeger/Open Tracing, etc.</p>
+				<a href="#motive-behind-this-project" id="motive-behind-this-project" style="color: inherit; text-decoration: none;">
+					<h2>Motive behind this project</h2>
+				</a>
+				<p>Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else.</p>
 				<p>You can find the article I wrote on this project here: <a href="https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9">https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9</a></p>
-				<h2 id="basic-concepts-behind-the-architecture">Basic Concepts behind the architecture</h2>
+				<a href="#basic-concepts-behind-the-architecture" id="basic-concepts-behind-the-architecture" style="color: inherit; text-decoration: none;">
+					<h2>Basic Concepts behind the architecture</h2>
+				</a>
 				<ol>
 					<li>All the code you write resides within <code>src</code> folder and gets built when you start the server in <code>dist</code> folder.</li>
 					<li>All configuration is stored against the respective environment in <code>src/config/env</code> folder and <code>.env</code> file in the root.</li>
@@ -77,8 +83,12 @@
 					<li>All the server side rendered template files are to be placed in <code>src/app/views</code> folder.</li>
 					<li>All your static files and content is to be placed in the <code>public</code> folder.</li>
 				</ol>
-				<h2 id="deployment-instructions">Deployment instructions</h2>
-				<h3 id="normal-installation">Normal Installation</h3>
+				<a href="#deployment-instructions" id="deployment-instructions" style="color: inherit; text-decoration: none;">
+					<h2>Deployment instructions</h2>
+				</a>
+				<a href="#normal-installation" id="normal-installation" style="color: inherit; text-decoration: none;">
+					<h3>Normal Installation</h3>
+				</a>
 				<ol>
 					<li>Install node.js and git</li>
 					<li>Add them to path if not already in path.</li>
@@ -87,13 +97,17 @@
 					<li>cd to the project directory and run tsc to build using typescript</li>
 					<li>Run <code>npm run-script start-dev</code></li>
 				</ol>
-				<h3 id="cloning-running-with-docker">Cloning &amp; Running with Docker</h3>
+				<a href="#cloning-amp-running-with-docker" id="cloning-amp-running-with-docker" style="color: inherit; text-decoration: none;">
+					<h3>Cloning &amp; Running with Docker</h3>
+				</a>
 				<ol>
 					<li>Install <a href="https://www.docker.com/">Docker</a> and <a href="https://docs.docker.com/compose/">Docker Compose</a></li>
 					<li>Clone/Download the repository and CD to it</li>
 					<li>Run <code>docker-compose up</code> to get the containers installed and started.</li>
 				</ol>
-				<h3 id="pulling-running-from-docker-hub">Pulling &amp; Running from Docker Hub</h3>
+				<a href="#pulling-amp-running-from-docker-hub" id="pulling-amp-running-from-docker-hub" style="color: inherit; text-decoration: none;">
+					<h3>Pulling &amp; Running from Docker Hub</h3>
+				</a>
 				<ol>
 					<li><p>Pull the container from DockerHub with the command <code>docker pull tvvignesh/node-skeleton</code> (Add version if you want)</p>
 					</li>
@@ -101,54 +115,105 @@
 						<code>docker run -d -p 8085:8085 -p 9229:9229 -e NODEJS_PORT=8085 -e NODE_ENV=development -e NODEJS_IP=0.0.0.0 tvvignesh/node-skeleton</code></p>
 					</li>
 				</ol>
-				<h3 id="running-via-pm2">Running via PM2</h3>
+				<a href="#running-via-pm2" id="running-via-pm2" style="color: inherit; text-decoration: none;">
+					<h3>Running via PM2</h3>
+				</a>
 				<ol>
 					<li>Install node.js and <a href="https://github.com/Unitech/pm2">pm2</a></li>
 					<li>CD to the pm2 directory</li>
 					<li>Run <code>pm2 start pm2-dev.json</code> to start the development cluster</li>
 				</ol>
-				<h2 id="building-the-code">Building the code</h2>
+				<a href="#running-with-kubernetes" id="running-with-kubernetes" style="color: inherit; text-decoration: none;">
+					<h3>Running with Kubernetes</h3>
+				</a>
+				<p>The project comes with some default kubernetes deployment and service yaml configurations. To use it, do <code>kubectl apply -f kubernetes/deployment.yaml</code> and <code>kubectl apply -f kubernetes/service.yaml</code> once Kubernetes and Kubectl are installed onto your system and configured.</p>
+				<a href="#building-the-code" id="building-the-code" style="color: inherit; text-decoration: none;">
+					<h2>Building the code</h2>
+				</a>
 				<ol>
 					<li>Run <code>npm run build</code> to build the typescript code, copy relevant files</li>
 				</ol>
-				<h2 id="logging-middleware">Logging Middleware</h2>
-				<p>Winston logging can be added by using the winston library.
-				<code>logger.log(&#39;error&#39;, &#39;Internal server error - &#39; + err.stack, err);</code></p>
-				<p>By default, logging occurs in console in the development environment and gets written to files within logs folder in other environments.</p>
-				<h2 id="static-files">Static Files</h2>
+				<a href="#logging-middleware" id="logging-middleware" style="color: inherit; text-decoration: none;">
+					<h2>Logging Middleware</h2>
+				</a>
+				<p>Logs can be added by using the log function from error.utils by specifying the log level, payload, SPAN if using Jaeger and a tag object with key-value pairs.</p>
+				<pre><code><span class="hljs-selector-tag">log</span>(<span class="hljs-string">'info'</span>, {
+  <span class="hljs-attribute">message</span>: <span class="hljs-string">'Log message here'</span>,
+  <span class="hljs-attribute">key1</span>: value1,
+  <span class="hljs-attribute">key2</span>: value2
+});</code></pre><p>Use the toggles provided in config to decide where you want to write logs. By default, console logging is enabled and file logging is disabled but this can be changed by using the config.</p>
+				<a href="#static-files" id="static-files" style="color: inherit; text-decoration: none;">
+					<h2>Static Files</h2>
+				</a>
 				<p>You can place all your static files in the <code>public</code> directory and that will get served by the server directly</p>
-				<h2 id="exposing-metrics">Exposing Metrics</h2>
+				<a href="#exposing-metrics" id="exposing-metrics" style="color: inherit; text-decoration: none;">
+					<h2>Exposing Metrics</h2>
+				</a>
 				<p>The project is bundled with <a href="https://github.com/siimon/prom-client">prom-client</a> to enable exporting the metrics to prometheus with ease. You can access the default metrics at &quot;/metrics&quot; endpoint. You can modify what you export in <code>src/app/controllers/metrics.server.controllers.ts</code></p>
-				<h2 id="linting">Linting</h2>
+				<a href="#formatting" id="formatting" style="color: inherit; text-decoration: none;">
+					<h2>Formatting</h2>
+				</a>
+				<p>The project comes with prettier configs and extensions built in.</p>
+				<p>You can format the project manually by running the command <code>npm run format</code> and prettier will format the project for you.</p>
+				<p>You may want to install an extension for your IDE though. More details on the same is available at <a href="https://prettier.io">https://prettier.io</a></p>
+				<a href="#linting" id="linting" style="color: inherit; text-decoration: none;">
+					<h2>Linting</h2>
+				</a>
 				<p>You can customize rules if needed using the .eslintrc file placed in the root directory. If you are using VSCode, you can have the ESLint extension installed. While linting is run everytime you build/start the server, you can manually run it by <code>npm run lint</code></p>
-				<h2 id="generate-api-documentation-openapi-swagger-">Generate API Documentation (OpenAPI/Swagger)</h2>
+				<a href="#generate-api-documentation-openapiswagger" id="generate-api-documentation-openapiswagger" style="color: inherit; text-decoration: none;">
+					<h2>Generate API Documentation (OpenAPI/Swagger)</h2>
+				</a>
 				<p>You can generate documentation site by providing details regarding all the endpoints in the <code>apidoc.yaml</code> file in the root and once done, you can start the server and your documentation will get exposed in <code>/api-docs</code> URL. You can use tools like <a href="https://mermade.github.io/openapi-gui/">OpenAPI GUI</a> to help generate the YAML file for you.</p>
-				<h2 id="generate-code-documentation">Generate Code Documentation</h2>
+				<a href="#generate-code-documentation" id="generate-code-documentation" style="color: inherit; text-decoration: none;">
+					<h2>Generate Code Documentation</h2>
+				</a>
 				<p>You can generate documentation based on your code by running <code>npm run document</code>. Once generated, you can find the documentation in the docs folder. See <a href="http://typedoc.org/guides/doccomments/">this</a> to know how to document your code to be rendered by the doc generator.</p>
-				<h2 id="jwt-authentication">JWT Authentication</h2>
+				<a href="#jwt-authentication" id="jwt-authentication" style="color: inherit; text-decoration: none;">
+					<h2>JWT Authentication</h2>
+				</a>
 				<p>Helpers Utilities for doing JWT authentication is added to <code>src/app/utils/auth.utils.ts</code> and controllers for the same in <code>src/app/controllers/auth.server.controller.ts</code>. The private and public keys are placed in the <code>creds</code> folder. You can generate your own by using tools like <a href="http://travistidwell.com/jsencrypt/demo/">this</a>.</p>
 				<p>No database implementation has been made so far and hence you may need to add your own tables/collections, create users, store secret keys, etc. which is more of an implementation detail.</p>
-				<h2 id="running-tests">Running Tests</h2>
+				<a href="#editorconfig" id="editorconfig" style="color: inherit; text-decoration: none;">
+					<h2>Editorconfig</h2>
+				</a>
+				<p>A .editorconfig file has been added to the project to enable consistency in development across different IDEs used by different developers. Visit <a href="http://editorconfig.org">http://editorconfig.org</a> for more information. You might have to install plugins in your editor to get this to work.</p>
+				<a href="#running-tests" id="running-tests" style="color: inherit; text-decoration: none;">
+					<h2>Running Tests</h2>
+				</a>
 				<p>You can run your tests by using <code>npm run test</code> command. The project is bundled with <a href="https://github.com/avajs/ava">AVA</a> as the test framework.</p>
-				<h2 id="environmental-variables">Environmental Variables</h2>
+				<a href="#environmental-variables" id="environmental-variables" style="color: inherit; text-decoration: none;">
+					<h2>Environmental Variables</h2>
+				</a>
 				<p>You can set up the environmental variables in the .env file and that will get used in files like docker-compose, Dockerfile, etc. In addition to this, you can set up the rest of the environmental configurations in <code>config/env/yourenv.ts</code> where yourenv can be anything and the respective configs will get loaded depending on env you set.</p>
-				<h2 id="compatibility">Compatibility</h2>
+				<a href="#compatibility" id="compatibility" style="color: inherit; text-decoration: none;">
+					<h2>Compatibility</h2>
+				</a>
 				<p>Since this project uses all the latest features of the node ecosystem, it requires Node &gt;= v10.0.0</p>
-				<h2 id="contributors">Contributors</h2>
+				<a href="#contributors" id="contributors" style="color: inherit; text-decoration: none;">
+					<h2>Contributors</h2>
+				</a>
 				<ol>
 					<li><a href="https://github.com/tvvignesh">Vignesh T.V.</a> - <a href="https://www.tvvignesh.com">https://www.tvvignesh.com</a></li>
 				</ol>
-				<h2 id="contributing-guide">Contributing Guide</h2>
+				<a href="#contributing-guide" id="contributing-guide" style="color: inherit; text-decoration: none;">
+					<h2>Contributing Guide</h2>
+				</a>
 				<ol>
 					<li>Find any bugs? Please raise it as an issue.</li>
 					<li>Have something to contribute? Please raise a pull request.</li>
 					<li>Looking for enhancements? Please check the milestones, and if you don&#39;t find it, raise an issue.</li>
 				</ol>
-				<h2 id="using-this-project-">Using this Project?</h2>
+				<a href="#using-this-project" id="using-this-project" style="color: inherit; text-decoration: none;">
+					<h2>Using this Project?</h2>
+				</a>
 				<p>Incase you are using this project, please let me know by dropping me a mail to <a href="mailto:vigneshviswam@gmail.com">vigneshviswam@gmail.com</a> or raising an issue, I will add you to the list of users.</p>
-				<h2 id="donations-">Donations?</h2>
+				<a href="#donations" id="donations" style="color: inherit; text-decoration: none;">
+					<h2>Donations?</h2>
+				</a>
 				<p>Since I am doing this project purely out of interest, I am not looking for donations. But, if you want to do something, donate for charity on behalf of this project and I will add you to the contributors list.</p>
-				<h3 id="license">License</h3>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h3>License</h3>
+				</a>
 				<p>MIT</p>
 			</div>
 		</div>
@@ -177,10 +242,19 @@
 						<a href="modules/_app_routes_root_server_routes_.html">"app/routes/root.server.routes"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_app_utils_api_utils_.html">"app/utils/api.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_app_utils_auth_utils_.html">"app/utils/auth.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_app_utils_error_utils_.html">"app/utils/error.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_app_utils_main_utils_.html">"app/utils/main.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_app_utils_tracing_utils_.html">"app/utils/tracing.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_config_config_.html">"config/config"</a>
@@ -207,16 +281,10 @@
 						<a href="modules/_config_init_.html">"config/init"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_config_logger_.html">"config/logger"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
 						<a href="modules/_schema_schema_.html">"schema/schema"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_server_.html">"server"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_tests_test_.html">"tests/test"</a>
 					</li>
 				</ul>
 			</nav>
@@ -239,6 +307,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

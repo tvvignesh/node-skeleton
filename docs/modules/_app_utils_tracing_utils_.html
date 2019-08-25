@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;tests/test&quot; | Documentation</title>
+	<title>&quot;app/utils/tracing.utils&quot; | Documentation</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,16 +54,137 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_tests_test_.html">&quot;tests/test&quot;</a>
+					<a href="_app_utils_tracing_utils_.html">&quot;app/utils/tracing.utils&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;tests/test&quot;</h1>
+			<h1>External module &quot;app/utils/tracing.utils&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_tracing_utils_.html#format_http_headers" class="tsd-kind-icon">FORMAT_<wbr>HTTP_<wbr>HEADERS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_tracing_utils_.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_tracing_utils_.html#initjaegertracer" class="tsd-kind-icon">init<wbr>Jaeger<wbr>Tracer</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_utils_tracing_utils_.html#inittracer" class="tsd-kind-icon">init<wbr>Tracer</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_utils_tracing_utils_.html#startspan" class="tsd-kind-icon">start<wbr>Span</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="format_http_headers" class="tsd-anchor"></a>
+					<h3>FORMAT_<wbr>HTTP_<wbr>HEADERS</h3>
+					<div class="tsd-signature tsd-kind-icon">FORMAT_<wbr>HTTP_<wbr>HEADERS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/tracing.utils.ts#L3">app/utils/tracing.utils.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="config" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;../../config/config&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/tracing.utils.ts#L2">app/utils/tracing.utils.ts:2</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="initjaegertracer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> init<wbr>Jaeger<wbr>Tracer</h3>
+					<div class="tsd-signature tsd-kind-icon">init<wbr>Jaeger<wbr>Tracer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;jaeger-client&#x27;).initTracer</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/tracing.utils.ts#L1">app/utils/tracing.utils.ts:1</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="inittracer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> init<wbr>Tracer</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">init<wbr>Tracer<span class="tsd-signature-symbol">(</span>serviceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, projectName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, headers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/tracing.utils.ts#L9">app/utils/tracing.utils.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>serviceName: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> projectName: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;config.app.title</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> headers: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="startspan" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> start<wbr>Span</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Span<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/tracing.utils.ts#L62">app/utils/tracing.utils.ts:62</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tag: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -90,10 +211,19 @@
 						<a href="_app_routes_root_server_routes_.html">"app/routes/root.server.routes"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_app_utils_api_utils_.html">"app/utils/api.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_app_utils_auth_utils_.html">"app/utils/auth.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_app_utils_error_utils_.html">"app/utils/error.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_app_utils_main_utils_.html">"app/utils/main.utils"</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="_app_utils_tracing_utils_.html">"app/utils/tracing.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_config_config_.html">"config/config"</a>
@@ -120,21 +250,30 @@
 						<a href="_config_init_.html">"config/init"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_config_logger_.html">"config/logger"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
 						<a href="_schema_schema_.html">"schema/schema"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_server_.html">"server"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="_tests_test_.html">"tests/test"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_tracing_utils_.html#format_http_headers" class="tsd-kind-icon">FORMAT_<wbr>HTTP_<wbr>HEADERS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_tracing_utils_.html#config" class="tsd-kind-icon">config</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_app_utils_tracing_utils_.html#initjaegertracer" class="tsd-kind-icon">init<wbr>Jaeger<wbr>Tracer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_app_utils_tracing_utils_.html#inittracer" class="tsd-kind-icon">init<wbr>Tracer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_app_utils_tracing_utils_.html#startspan" class="tsd-kind-icon">start<wbr>Span</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -152,6 +291,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

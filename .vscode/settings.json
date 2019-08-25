@@ -15,5 +15,7 @@
       {"language":  "typescriptreact",  "autoFix":  true  },
       "javascript",
       "javascriptreact"
-    ]
+    ],
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;config/logger&quot; | Documentation</title>
+	<title>&quot;app/utils/api.utils&quot; | Documentation</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_config_logger_.html">&quot;config/logger&quot;</a>
+					<a href="_app_utils_api_utils_.html">&quot;app/utils/api.utils&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;config/logger&quot;</h1>
+			<h1>External module &quot;app/utils/api.utils&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,9 +71,14 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_config_logger_.html#datestr" class="tsd-kind-icon">date<wbr>Str</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_config_logger_.html#logger" class="tsd-kind-icon">logger</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_config_logger_.html#now" class="tsd-kind-icon">now</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_api_utils_.html#format_http_headers" class="tsd-kind-icon">FORMAT_<wbr>HTTP_<wbr>HEADERS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_app_utils_api_utils_.html#axios" class="tsd-kind-icon">axios</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_app_utils_api_utils_.html#apicall" class="tsd-kind-icon">api<wbr>Call</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,34 +87,58 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="datestr" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagLet">Let</span> date<wbr>Str</h3>
-					<div class="tsd-signature tsd-kind-icon">date<wbr>Str<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;now.toISOString()</span></div>
+					<a name="format_http_headers" class="tsd-anchor"></a>
+					<h3>FORMAT_<wbr>HTTP_<wbr>HEADERS</h3>
+					<div class="tsd-signature tsd-kind-icon">FORMAT_<wbr>HTTP_<wbr>HEADERS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/config/logger.ts#L4">config/logger.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/api.utils.ts#L3">app/utils/api.utils.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="logger" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> logger</h3>
-					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;winston&#x27;)</span></div>
+					<a name="axios" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> axios</h3>
+					<div class="tsd-signature tsd-kind-icon">axios<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;axios&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/config/logger.ts#L1">config/logger.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/api.utils.ts#L1">app/utils/api.utils.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="now" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagLet">Let</span> now</h3>
-					<div class="tsd-signature tsd-kind-icon">now<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> =&nbsp;new Date()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/26c69d6/src/config/logger.ts#L3">config/logger.ts:3</a></li>
-						</ul>
-					</aside>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="apicall" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> api<wbr>Call</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">api<wbr>Call<span class="tsd-signature-symbol">(</span>apiOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, span<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tvvignesh/node-skeleton/blob/6b75a04/src/app/utils/api.utils.ts#L13">app/utils/api.utils.ts:13</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Make an API Call by passing the payload and inject Tracing headers and context in the process</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>apiOptions: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>span: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -137,11 +166,20 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_app_routes_root_server_routes_.html">"app/routes/root.server.routes"</a>
 					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="_app_utils_api_utils_.html">"app/utils/api.utils"</a>
+					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_app_utils_auth_utils_.html">"app/utils/auth.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_app_utils_error_utils_.html">"app/utils/error.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_app_utils_main_utils_.html">"app/utils/main.utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_app_utils_tracing_utils_.html">"app/utils/tracing.utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_config_config_.html">"config/config"</a>
@@ -167,30 +205,24 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_config_init_.html">"config/init"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="_config_logger_.html">"config/logger"</a>
-					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_schema_schema_.html">"schema/schema"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_server_.html">"server"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tests_test_.html">"tests/test"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_config_logger_.html#datestr" class="tsd-kind-icon">date<wbr>Str</a>
+						<a href="_app_utils_api_utils_.html#format_http_headers" class="tsd-kind-icon">FORMAT_<wbr>HTTP_<wbr>HEADERS</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_config_logger_.html#logger" class="tsd-kind-icon">logger</a>
+						<a href="_app_utils_api_utils_.html#axios" class="tsd-kind-icon">axios</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_config_logger_.html#now" class="tsd-kind-icon">now</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_app_utils_api_utils_.html#apicall" class="tsd-kind-icon">api<wbr>Call</a>
 					</li>
 				</ul>
 			</nav>
@@ -209,6 +241,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
