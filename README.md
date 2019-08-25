@@ -58,7 +58,7 @@ The project comes with some default kubernetes deployment and service yaml confi
 
 ## Logging Middleware
 
-Logs can be added by using the log function from error.utils by specifying the log level, payload, SPAN if using Jaeger and tag and
+Logs can be added by using the log function from error.utils by specifying the log level, payload, SPAN if using Jaeger and a tag object with key-value pairs.
 
 ```
 log('info', {
