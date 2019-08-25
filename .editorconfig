@@ -1,0 +1,35 @@
+# EditorConfig for this project
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+insert_final_newline = true
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,py,ts}]
+charset = utf-8
+
+[*.ts]
+indent_style = tab
+
+[{*.json,*.md,*.yml}]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
