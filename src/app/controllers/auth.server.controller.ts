@@ -1,4 +1,5 @@
 let config = require('../../config/config');
+import { log } from '../utils/error.utils';
 
 import { signJWT, verifyJWT } from '../utils/auth.utils';
 
@@ -37,7 +38,10 @@ export const resolveToken = function (req, res, next) {
     let shouldAllow = true;
 
     // Remove this console once this portion is modified
-    console.log(decoded);
+    log('info', {
+		message: 'Resolving token',
+		decoded: decoded
+	});
 
     if (shouldAllow) {
         next();

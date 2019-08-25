@@ -1,6 +1,6 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, Kubernetes, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, OpenAPI/Swagger, etc.
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, Kubernetes, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, Editorconfig, OpenAPI/Swagger, Jaeger/Open Tracing, etc.
 
 ## Motive behind this project
 
@@ -49,16 +49,27 @@ You can find the article I wrote on this project here: [https://medium.com/techa
 2. CD to the pm2 directory
 3. Run `pm2 start pm2-dev.json` to start the development cluster
 
+
+### Running with Kubernetes
+
+The project comes with some default kubernetes deployment and service yaml configurations. To use it, do `kubectl apply -f kubernetes/deployment.yaml` and `kubectl apply -f kubernetes/service.yaml` once Kubernetes and Kubectl are installed onto your system and configured.
+
 ## Building the code
 
 1. Run `npm run build` to build the typescript code, copy relevant files
 
 ## Logging Middleware
 
-Winston logging can be added by using the winston library.
-`logger.log('error', 'Internal server error - ' + err.stack, err);`
+Logs can be added by using the log function from error.utils by specifying the log level, payload, SPAN if using Jaeger and tag and 
 
-By default, logging occurs in console in the development environment and gets written to files within logs folder in other environments.
+```
+log('info', {
+		message: 'Resolving token',
+		decoded: decoded
+});
+```
+
+Use the toggles provided in config to decide where you want to write logs. By default, console logging is enabled and file logging is disabled but this can be changed by using the config.
 
 ## Static Files
 
@@ -85,6 +96,10 @@ You can generate documentation based on your code by running `npm run document`.
 Helpers Utilities for doing JWT authentication is added to `src/app/utils/auth.utils.ts` and controllers for the same in `src/app/controllers/auth.server.controller.ts`. The private and public keys are placed in the `creds` folder. You can generate your own by using tools like [this](http://travistidwell.com/jsencrypt/demo/).
 
 No database implementation has been made so far and hence you may need to add your own tables/collections, create users, store secret keys, etc. which is more of an implementation detail.
+
+## Editorconfig
+
+A .editorconfig file has been added to the project to enable consistency in development across different IDEs used by different developers. Visit http://editorconfig.org for more information. You might have to install plugins in your editor to get this to work.
 
 ## Running Tests
 

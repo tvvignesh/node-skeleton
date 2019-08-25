@@ -19,8 +19,9 @@ let express = require('express'),
     swaggerUi = require('swagger-ui-express'),
     YAML = require('yamljs');
 
-let config = require('./config'),
-    logger = require('./logger');
+let config = require('./config');
+
+import { log } from '../app/utils/error.utils';
 
 // let schema = require('../schema/schema').schema;
 
@@ -110,7 +111,10 @@ module.exports = function () {
 
     // Assume 404 since no middleware responded
     app.use(function (req, res) {
-        logger.log('error', 'Page Not Found - ' + req.url, req.body || req.query);
+        log('error', {
+			message: 'Page Not Found - ' + req.url,
+			payload: req.body || req.query
+		});
         res.render(path.join(__dirname, "../app/views/error/404"), {
             head: {
                 title: 'Page Not Found'
