@@ -3,7 +3,7 @@ sudo: required
 services:
   - docker
 node_js:
-  - "11.0.0"
+  - "12.9.0"
 jobs:
   include:
     - stage: unit

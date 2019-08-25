@@ -1,7 +1,13 @@
 {
-    "parser": "typescript-eslint-parser",
+    "extends": [
+        "prettier",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
     "plugins": [
-        "typescript"
+        "typescript",
+        "prettier"
     ],
     "env": {
         "es6": true,
@@ -15,10 +21,7 @@
         }
     },
     "rules": {
-        "array-bracket-spacing": [
-            "error",
-            "always"
-        ],
+        "prettier/prettier": ["warn"],
         "func-call-spacing": [
             "warn"
         ],
@@ -382,14 +385,6 @@
         "space-before-blocks": [
             "error",
             "always"
-        ],
-        "space-before-function-paren": [
-            "error",
-            {
-                "anonymous": "always",
-                "named": "never",
-                "asyncArrow": "always"
-            }
         ],
         "space-in-parens": [
             "error",

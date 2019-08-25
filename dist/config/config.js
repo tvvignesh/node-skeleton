@@ -4,7 +4,7 @@ let _ = require('lodash'), glob = require('glob');
 module.exports = _.extend(require('./env/all'), require('./env/' + process.env.NODE_ENV) || {});
 module.exports.getGlobbedFiles = function (globPatterns, removeRoot) {
     let _this = this;
-    let urlRegex = new RegExp('^(?:[a-z]+:)?\/\/', 'i');
+    let urlRegex = new RegExp('^(?:[a-z]+:)?//', 'i');
     let output = [];
     if (_.isArray(globPatterns)) {
         globPatterns.forEach(function (globPattern) {

@@ -7,10 +7,16 @@ const jwt = require('jsonwebtoken');
 
 let config = require('../../config/config');
 
-let privateKEY = fs.readFileSync(path.join(__dirname, "../../../creds/jwtRS512.key"), 'utf8'),
-    publicKEY = fs.readFileSync(path.join(__dirname, "../../../creds/jwtRS512.key.pub"), 'utf8');
+let privateKEY = fs.readFileSync(
+        path.join(__dirname, '../../../creds/jwtRS512.key'),
+        'utf8'
+    ),
+    publicKEY = fs.readFileSync(
+        path.join(__dirname, '../../../creds/jwtRS512.key.pub'),
+        'utf8'
+    );
 
-export const signJWT = function (payload, $Options) {
+export const signJWT = function(payload, $Options) {
     /*
      sOptions = {
       issuer: "Authorizaxtion/Resource/This server",
@@ -21,8 +27,8 @@ export const signJWT = function (payload, $Options) {
     // Token signing options
     let signOptions = {
         issuer: $Options.issuer || config.jwt.issuer,
-        expiresIn: "30d", // 30 days validity
-        algorithm: "RS512",
+        expiresIn: '30d', // 30 days validity
+        algorithm: 'RS512',
         subject: $Options.subject || undefined,
         audience: $Options.audience || undefined
     };
@@ -30,7 +36,7 @@ export const signJWT = function (payload, $Options) {
     return jwt.sign(payload, privateKEY, signOptions);
 };
 
-export const verifyJWT = function (token, $Options) {
+export const verifyJWT = function(token, $Options) {
     /*
      vOption = {
       issuer: "Authorization/Resource/This server",
@@ -42,8 +48,8 @@ export const verifyJWT = function (token, $Options) {
         issuer: $Options.issuer || config.jwt.issuer,
         subject: $Options.subject || undefined,
         audience: $Options.audience || undefined,
-        expiresIn: "30d",
-        algorithm: [ "RS512" ]
+        expiresIn: '30d',
+        algorithm: ['RS512']
     };
 
     try {
@@ -53,7 +59,7 @@ export const verifyJWT = function (token, $Options) {
     }
 };
 
-export const decodeJWT = function (token) {
+export const decodeJWT = function(token) {
     return jwt.decode(token, { complete: true });
     // returns null if token is invalid
 };

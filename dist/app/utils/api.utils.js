@@ -13,16 +13,16 @@ const error_utils_1 = require("./error.utils");
 const { FORMAT_HTTP_HEADERS } = require('opentracing');
 exports.apiCall = function (apiOptions, span) {
     return __awaiter(this, void 0, void 0, function* () {
-        let apiCallSpan = global["tracer"].startSpan("api-call", { childOf: span });
+        let apiCallSpan = global['tracer'].startSpan('api-call', { childOf: span });
         try {
             apiOptions.headers = apiOptions.headers || {
                 Accept: 'application/json;charset=UTF-8'
             };
             apiOptions.responseType = apiOptions.responseType || 'json';
             apiOptions.method = apiOptions.method || 'POST';
-            global["tracer"].inject(apiCallSpan, FORMAT_HTTP_HEADERS, apiOptions.headers);
-            error_utils_1.log("info", {
-                msg: "Routing",
+            global['tracer'].inject(apiCallSpan, FORMAT_HTTP_HEADERS, apiOptions.headers);
+            error_utils_1.log('info', {
+                msg: 'Routing',
                 url: apiOptions.url
             });
             let response = yield axios(apiOptions);
@@ -34,8 +34,8 @@ exports.apiCall = function (apiOptions, span) {
             };
         }
         catch (err) {
-            error_utils_1.log("error", {
-                message: "Error in routing url",
+            error_utils_1.log('error', {
+                message: 'Error in routing url',
                 url: apiOptions.url,
                 err: err
             }, apiCallSpan);

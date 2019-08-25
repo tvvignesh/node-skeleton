@@ -7,15 +7,19 @@ let transports = [];
 let dateStr = new Date().toISOString();
 
 if (config.toggle.log.files) {
-    transports.push(new (logger.transports.File)({
-        filename: 'logs/' + dateStr + '-error.log',
-        level: 'error'
-    }));
+    transports.push(
+        new logger.transports.File({
+            filename: 'logs/' + dateStr + '-error.log',
+            level: 'error'
+        })
+    );
 
-    transports.push(new (logger.transports.File)({
-        filename: 'logs/' + dateStr + '-info.log',
-        level: 'info'
-    }));
+    transports.push(
+        new logger.transports.File({
+            filename: 'logs/' + dateStr + '-info.log',
+            level: 'info'
+        })
+    );
 }
 
 if (config.toggle.log.console) {
@@ -29,8 +33,12 @@ logger.configure({
 /**
  * @param serviceName
  */
-export const log = function (level, payload, span = undefined, tagObj = undefined) {
-
+export const log = function(
+    level,
+    payload,
+    span = undefined,
+    tagObj = undefined
+) {
     if (span && tagObj) {
         for (let tag in tagObj) {
             if (Object.prototype.hasOwnProperty.call(tagObj, tag)) {
@@ -39,7 +47,7 @@ export const log = function (level, payload, span = undefined, tagObj = undefine
         }
     }
 
-    if (span && level === "error") {
+    if (span && level === 'error') {
         span.setTag(Tags.ERROR, true);
     }
 

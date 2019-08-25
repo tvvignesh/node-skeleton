@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path = require('path'), fs = require('fs');
 const jwt = require('jsonwebtoken');
 let config = require('../../config/config');
-let privateKEY = fs.readFileSync(path.join(__dirname, "../../../creds/jwtRS512.key"), 'utf8'), publicKEY = fs.readFileSync(path.join(__dirname, "../../../creds/jwtRS512.key.pub"), 'utf8');
+let privateKEY = fs.readFileSync(path.join(__dirname, '../../../creds/jwtRS512.key'), 'utf8'), publicKEY = fs.readFileSync(path.join(__dirname, '../../../creds/jwtRS512.key.pub'), 'utf8');
 exports.signJWT = function (payload, $Options) {
     let signOptions = {
         issuer: $Options.issuer || config.jwt.issuer,
-        expiresIn: "30d",
-        algorithm: "RS512",
+        expiresIn: '30d',
+        algorithm: 'RS512',
         subject: $Options.subject || undefined,
         audience: $Options.audience || undefined
     };
@@ -19,8 +19,8 @@ exports.verifyJWT = function (token, $Options) {
         issuer: $Options.issuer || config.jwt.issuer,
         subject: $Options.subject || undefined,
         audience: $Options.audience || undefined,
-        expiresIn: "30d",
-        algorithm: ["RS512"]
+        expiresIn: '30d',
+        algorithm: ['RS512']
     };
     try {
         return jwt.verify(token, publicKEY, verifyOptions);

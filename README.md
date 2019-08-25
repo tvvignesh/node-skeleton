@@ -1,10 +1,10 @@
 # Node Skeleton
 
-A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, Kubernetes, PM2, Eslint, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, Editorconfig, OpenAPI/Swagger, Jaeger/Open Tracing, etc.
+A boilerplate to help start Node.js projects quickly and effectively. Packaged with Typescript, Docker, Kubernetes, PM2, Eslint, Prettier, VSCode config, Winston, Typedoc, Nodemon, AVA, PromClient, JWT, Editorconfig, OpenAPI/Swagger, Jaeger/Open Tracing, etc.
 
 ## Motive behind this project
 
-Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else. 
+Having worked on a lot of node.js projects, I had to repetitively do the same tasks over and over again, get a project structure, install stuff, implement standardization, containerize it, implement logging, and make sure everything is in place before I start off. This takes all the burden out and lets people focus just on the logic and nothing else.
 
 You can find the article I wrote on this project here: [https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9](https://medium.com/techahoy/building-a-boilerplate-for-microservices-part-1-166ce00f5ce9)
 
@@ -33,22 +33,20 @@ You can find the article I wrote on this project here: [https://medium.com/techa
 
 1. Install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
 2. Clone/Download the repository and CD to it
-2. Run `docker-compose up` to get the containers installed and started.
+3. Run `docker-compose up` to get the containers installed and started.
 
 ### Pulling & Running from Docker Hub
 
 1. Pull the container from DockerHub with the command `docker pull tvvignesh/node-skeleton` (Add version if you want)
 
 2. Then, start the container using the command:
-`docker run -d -p 8085:8085 -p 9229:9229 -e NODEJS_PORT=8085 -e NODE_ENV=development -e NODEJS_IP=0.0.0.0 tvvignesh/node-skeleton`
-
+   `docker run -d -p 8085:8085 -p 9229:9229 -e NODEJS_PORT=8085 -e NODE_ENV=development -e NODEJS_IP=0.0.0.0 tvvignesh/node-skeleton`
 
 ### Running via PM2
 
 1. Install node.js and [pm2](https://github.com/Unitech/pm2)
 2. CD to the pm2 directory
 3. Run `pm2 start pm2-dev.json` to start the development cluster
-
 
 ### Running with Kubernetes
 
@@ -60,12 +58,13 @@ The project comes with some default kubernetes deployment and service yaml confi
 
 ## Logging Middleware
 
-Logs can be added by using the log function from error.utils by specifying the log level, payload, SPAN if using Jaeger and tag and 
+Logs can be added by using the log function from error.utils by specifying the log level, payload, SPAN if using Jaeger and tag and
 
 ```
 log('info', {
-		message: 'Resolving token',
-		decoded: decoded
+  message: 'Log message here',
+  key1: value1,
+  key2: value2
 });
 ```
 
@@ -78,6 +77,14 @@ You can place all your static files in the `public` directory and that will get 
 ## Exposing Metrics
 
 The project is bundled with [prom-client](https://github.com/siimon/prom-client) to enable exporting the metrics to prometheus with ease. You can access the default metrics at "/metrics" endpoint. You can modify what you export in `src/app/controllers/metrics.server.controllers.ts`
+
+## Formatting
+
+The project comes with prettier configs and extensions built in.
+
+You can format the project manually by running the command `npm run format` and prettier will format the project for you.
+
+You may want to install an extension for your IDE though. More details on the same is available at https://prettier.io
 
 ## Linting
 

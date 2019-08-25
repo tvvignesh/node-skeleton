@@ -16,7 +16,8 @@ indent_size = 4
 charset = utf-8
 
 [*.ts]
-indent_style = tab
+indent_style = space
+indent_size = 4
 
 [{*.json,*.md,*.yml}]
 indent_style = space
@@ -27,9 +28,9 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
-# Tab indentation (no size specified)
+# Space indentation (no size specified)
 [Makefile]
-indent_style = tab
+indent_style = space
 
 [*.md]
 trim_trailing_whitespace = false

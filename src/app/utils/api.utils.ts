@@ -10,12 +10,10 @@ const { FORMAT_HTTP_HEADERS } = require('opentracing');
  * @param span
  * @param method
  */
-export const apiCall = async function (apiOptions, span) {
-
-    let apiCallSpan = global["tracer"].startSpan("api-call", { childOf: span });
+export const apiCall = async function(apiOptions, span) {
+    let apiCallSpan = global['tracer'].startSpan('api-call', { childOf: span });
 
     try {
-
         apiOptions.headers = apiOptions.headers || {
             Accept: 'application/json;charset=UTF-8'
         };
@@ -24,10 +22,14 @@ export const apiCall = async function (apiOptions, span) {
 
         apiOptions.method = apiOptions.method || 'POST';
 
-        global["tracer"].inject(apiCallSpan, FORMAT_HTTP_HEADERS, apiOptions.headers);
+        global['tracer'].inject(
+            apiCallSpan,
+            FORMAT_HTTP_HEADERS,
+            apiOptions.headers
+        );
 
-        log("info", {
-            msg: "Routing",
+        log('info', {
+            msg: 'Routing',
             url: apiOptions.url
         });
 
@@ -41,12 +43,15 @@ export const apiCall = async function (apiOptions, span) {
             span: apiCallSpan
         };
     } catch (err) {
-
-        log("error", {
-            message: "Error in routing url",
-            url: apiOptions.url,
-            err: err
-        }, apiCallSpan);
+        log(
+            'error',
+            {
+                message: 'Error in routing url',
+                url: apiOptions.url,
+                err: err
+            },
+            apiCallSpan
+        );
 
         apiCallSpan.finish();
 

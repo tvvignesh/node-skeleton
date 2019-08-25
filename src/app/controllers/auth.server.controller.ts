@@ -6,12 +6,13 @@ import { signJWT, verifyJWT } from '../utils/auth.utils';
 /**
  * AUTHENTICATION MIDDLEWARE FUNCTION
  */
-export const authenticate = function (req, res, next) {
+export const authenticate = function(req, res, next) {
     if (req.headers.authorization === config.authorization) {
         next();
     } else {
         return res.status(400).jsonp({
-            message: 'You may be unauthorized to do this request! Please add the token'
+            message:
+                'You may be unauthorized to do this request! Please add the token'
         });
     }
 };
@@ -22,7 +23,7 @@ export const authenticate = function (req, res, next) {
  * @param res
  * @param next
  */
-export const resolveToken = function (req, res, next) {
+export const resolveToken = function(req, res, next) {
     let token = req.headers.authorization;
 
     let decoded = verifyJWT(token, {});
@@ -58,8 +59,7 @@ export const resolveToken = function (req, res, next) {
  * @param res
  * @param next
  */
-export const resolveSecret = function (req, res, next) {
-
+export const resolveSecret = function(req, res, next) {
     let secret = req.headers.secret;
 
     // Modify this to add your own verification from the DB. If success, allow
@@ -80,8 +80,7 @@ export const resolveSecret = function (req, res, next) {
  * @param req
  * @param res
  */
-export const generateAPICredentials = function (req, res) {
-
+export const generateAPICredentials = function(req, res) {
     // When generating do a check to see if the user is allowed to have access to the API
 
     let shouldAllow = true;
@@ -95,7 +94,6 @@ export const generateAPICredentials = function (req, res) {
         return res.status(200).jsonp({
             token: token
         });
-
     }
 
     return res.status(500).jsonp({

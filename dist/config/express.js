@@ -19,8 +19,8 @@ module.exports = function () {
     });
     app.set('showStackError', true);
     app.engine('server.view.html', mustacheExpress());
-    app.set("view engine", "server.view.html");
-    app.set("views", path.join(__dirname, "../app/views/"));
+    app.set('view engine', 'server.view.html');
+    app.set('views', path.join(__dirname, '../app/views/'));
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
         app.set('view cache', false);
@@ -55,19 +55,19 @@ module.exports = function () {
     });
     app.set('jsonp callback', true);
     if (config.toggle.apidoc) {
-        const swaggerDocument = YAML.load(path.join(__dirname, "../../apidoc.yaml"));
+        const swaggerDocument = YAML.load(path.join(__dirname, '../../apidoc.yaml'));
         app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     }
     config.getGlobbedFiles('./**/routes/**/*.js').forEach(function (routePath) {
         require(path.resolve(routePath))(app);
     });
-    app.use(express.static(path.join(__dirname, "../app/public")));
+    app.use(express.static(path.join(__dirname, '../app/public')));
     app.use(function (req, res) {
         error_utils_1.log('error', {
             message: 'Page Not Found - ' + req.url,
             payload: req.body || req.query
         });
-        res.render(path.join(__dirname, "../app/views/error/404"), {
+        res.render(path.join(__dirname, '../app/views/error/404'), {
             head: {
                 title: 'Page Not Found'
             },

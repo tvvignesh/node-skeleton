@@ -4,10 +4,16 @@
         "**/bower_components": true,
         "**/dist": true
     },
-    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "typescript.format.insertSpaceAfterConstructor": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-    "editor.detectIndentation": false
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "eslint.enable":true,
+    "eslint.autoFixOnSave":  true,
+    "eslint.lintTask.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.validate": [
+      {"language":  "typescript",  "autoFix":  true  },
+      {"language":  "typescriptreact",  "autoFix":  true  },
+      "javascript",
+      "javascriptreact"
+    ]
 }

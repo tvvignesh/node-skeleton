@@ -13,41 +13,41 @@ exports.initTracer = function (serviceName, projectName = config.app.title, head
             logSpans: true
         },
         sampler: {
-            type: "probabilistic",
+            type: 'probabilistic',
             param: 1.0
         }
     };
     const options = {
         logger: {
             info(msg) {
-                error_utils_1.log("info", {
+                error_utils_1.log('info', {
                     payload: msg
                 });
             },
             error(msg) {
-                error_utils_1.log("error", {
+                error_utils_1.log('error', {
                     payload: msg
                 });
             }
         }
     };
-    global["tracer"] = initJaegerTracer(tracerConfig, options);
+    global['tracer'] = initJaegerTracer(tracerConfig, options);
     let parentSpan;
     if (Object.keys(headers).length === 0) {
-        parentSpan = global["tracer"].startSpan(projectName);
+        parentSpan = global['tracer'].startSpan(projectName);
     }
     else {
-        const parentSpanContext = global["tracer"].extract(FORMAT_HTTP_HEADERS, headers);
-        parentSpan = global["tracer"].startSpan(projectName, {
+        const parentSpanContext = global['tracer'].extract(FORMAT_HTTP_HEADERS, headers);
+        parentSpan = global['tracer'].startSpan(projectName, {
             childOf: parentSpanContext
         });
     }
     return parentSpan;
 };
 exports.startSpan = function (tag, options = {}) {
-    if (!global["tracer"]) {
-        global["tracer"] = exports.initTracer("ml-platform");
+    if (!global['tracer']) {
+        global['tracer'] = exports.initTracer('ml-platform');
     }
-    return global["tracer"].startSpan(tag, options);
+    return global['tracer'].startSpan(tag, options);
 };
 //# sourceMappingURL=tracing.utils.js.map

@@ -6,11 +6,11 @@ const logger = require('winston');
 let transports = [];
 let dateStr = new Date().toISOString();
 if (config.toggle.log.files) {
-    transports.push(new (logger.transports.File)({
+    transports.push(new logger.transports.File({
         filename: 'logs/' + dateStr + '-error.log',
         level: 'error'
     }));
-    transports.push(new (logger.transports.File)({
+    transports.push(new logger.transports.File({
         filename: 'logs/' + dateStr + '-info.log',
         level: 'info'
     }));
@@ -29,7 +29,7 @@ exports.log = function (level, payload, span = undefined, tagObj = undefined) {
             }
         }
     }
-    if (span && level === "error") {
+    if (span && level === 'error') {
         span.setTag(Tags.ERROR, true);
     }
     logger.log(level, JSON.stringify(payload));

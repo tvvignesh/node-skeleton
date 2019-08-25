@@ -21,21 +21,21 @@ collectDefaultMetrics({
 const testCounter = new client.Counter({
     name: 'counterName',
     help: 'counterHelp',
-    labelNames: [ 'label1', 'label2' ],
-    registers: [ register ]
+    labelNames: ['label1', 'label2'],
+    registers: [register]
 });
 
 const testGauge = new client.Gauge({
     name: 'gaugeName',
     help: 'gaugeHelp',
-    registers: [ register ]
+    registers: [register]
 });
 
 const testHistogram = new client.Histogram({
     name: 'histogramName',
     help: 'histogramHelp',
-    labelNames: [ 'label1' ],
-    buckets: [ 0.1, 5, 15, 50, 100, 500 ]
+    labelNames: ['label1'],
+    buckets: [0.1, 5, 15, 50, 100, 500]
 });
 
 const testSummary = new client.Summary({
@@ -46,11 +46,13 @@ const testSummary = new client.Summary({
 /**
  * INITIALIZE METRICS
  */
-const initCounters = function () {
-
-    testCounter.inc({
-        label1: 'Test Label'
-    }, 0);
+const initCounters = function() {
+    testCounter.inc(
+        {
+            label1: 'Test Label'
+        },
+        0
+    );
 
     testGauge.set(0);
 
@@ -61,9 +63,9 @@ const initCounters = function () {
 
 initCounters();
 
-const mergedRegistries = client.Registry.merge([ register, client.register ]);
+const mergedRegistries = client.Registry.merge([register, client.register]);
 
-export const getMetrics = function (req, res) {
+export const getMetrics = function(req, res) {
     res.set('Content-Type', mergedRegistries.contentType);
     res.end(mergedRegistries.metrics());
 };

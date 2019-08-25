@@ -6,8 +6,11 @@ import { log } from './error.utils';
 /**
  * @param serviceName
  */
-export const initTracer = function (serviceName, projectName = config.app.title, headers = {}) {
-
+export const initTracer = function(
+    serviceName,
+    projectName = config.app.title,
+    headers = {}
+) {
     const tracerConfig = {
         serviceName: serviceName,
         reporter: {
@@ -16,7 +19,7 @@ export const initTracer = function (serviceName, projectName = config.app.title,
             logSpans: true
         },
         sampler: {
-            type: "probabilistic",
+            type: 'probabilistic',
             param: 1.0
         }
     };
@@ -24,28 +27,31 @@ export const initTracer = function (serviceName, projectName = config.app.title,
     const options = {
         logger: {
             info(msg) {
-                log("info", {
+                log('info', {
                     payload: msg
                 });
             },
             error(msg) {
-                log("error", {
+                log('error', {
                     payload: msg
                 });
             }
         }
     };
 
-    global["tracer"] = initJaegerTracer(tracerConfig, options);
+    global['tracer'] = initJaegerTracer(tracerConfig, options);
 
     let parentSpan;
 
     if (Object.keys(headers).length === 0) {
-        parentSpan = global["tracer"].startSpan(projectName);
+        parentSpan = global['tracer'].startSpan(projectName);
     } else {
-        const parentSpanContext = global["tracer"].extract(FORMAT_HTTP_HEADERS, headers);
+        const parentSpanContext = global['tracer'].extract(
+            FORMAT_HTTP_HEADERS,
+            headers
+        );
 
-        parentSpan = global["tracer"].startSpan(projectName, {
+        parentSpan = global['tracer'].startSpan(projectName, {
             childOf: parentSpanContext
         });
     }
@@ -53,9 +59,9 @@ export const initTracer = function (serviceName, projectName = config.app.title,
     return parentSpan;
 };
 
-export const startSpan = function (tag, options = {}) {
-    if (!global["tracer"]) {
-        global["tracer"] = initTracer("ml-platform");
+export const startSpan = function(tag, options = {}) {
+    if (!global['tracer']) {
+        global['tracer'] = initTracer('ml-platform');
     }
-    return global["tracer"].startSpan(tag, options);
+    return global['tracer'].startSpan(tag, options);
 };
