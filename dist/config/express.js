@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let fs = require('fs'), http = require('http'), https = require('https'), path = require('path');
 let express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), xss = require('xss-clean'), swaggerUi = require('swagger-ui-express'), YAML = require('yamljs');
-let config = require('./config'), logger = require('./logger');
+let config = require('./config');
+const error_utils_1 = require("../app/utils/error.utils");
 module.exports = function () {
     let app = express();
     app.locals.title = config.app.title;
@@ -62,7 +63,10 @@ module.exports = function () {
     });
     app.use(express.static(path.join(__dirname, "../app/public")));
     app.use(function (req, res) {
-        logger.log('error', 'Page Not Found - ' + req.url, req.body || req.query);
+        error_utils_1.log('error', {
+            message: 'Page Not Found - ' + req.url,
+            payload: req.body || req.query
+        });
         res.render(path.join(__dirname, "../app/views/error/404"), {
             head: {
                 title: 'Page Not Found'

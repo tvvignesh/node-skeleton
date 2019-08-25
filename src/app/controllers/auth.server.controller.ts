@@ -39,9 +39,9 @@ export const resolveToken = function (req, res, next) {
 
     // Remove this console once this portion is modified
     log('info', {
-		message: 'Resolving token',
-		decoded: decoded
-	});
+        message: 'Resolving token',
+        decoded: decoded
+    });
 
     if (shouldAllow) {
         next();

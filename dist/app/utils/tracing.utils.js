@@ -1,13 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const initJaegerTracer = require('jaeger-client').initTracer;
 const config = require('../../config/config');
 const { FORMAT_HTTP_HEADERS } = require('opentracing');
-import { log } from './error.utils';
-
-/**
- * @param serviceName
- */
-export const initTracer = function (serviceName, projectName = config.app.title, headers = {}) {
-
+const error_utils_1 = require("./error.utils");
+exports.initTracer = function (serviceName, projectName = config.app.title, headers = {}) {
     const tracerConfig = {
         serviceName: serviceName,
         reporter: {
@@ -20,42 +17,37 @@ export const initTracer = function (serviceName, projectName = config.app.title,
             param: 1.0
         }
     };
-
     const options = {
         logger: {
             info(msg) {
-                log("info", {
+                error_utils_1.log("info", {
                     payload: msg
                 });
             },
             error(msg) {
-                log("error", {
+                error_utils_1.log("error", {
                     payload: msg
                 });
             }
         }
     };
-
     global["tracer"] = initJaegerTracer(tracerConfig, options);
-
     let parentSpan;
-
     if (Object.keys(headers).length === 0) {
         parentSpan = global["tracer"].startSpan(projectName);
-    } else {
+    }
+    else {
         const parentSpanContext = global["tracer"].extract(FORMAT_HTTP_HEADERS, headers);
-
         parentSpan = global["tracer"].startSpan(projectName, {
             childOf: parentSpanContext
         });
     }
-
     return parentSpan;
 };
-
-export const startSpan = function (tag, options = {}) {
+exports.startSpan = function (tag, options = {}) {
     if (!global["tracer"]) {
-        global["tracer"] = initTracer("ml-platform");
+        global["tracer"] = exports.initTracer("ml-platform");
     }
     return global["tracer"].startSpan(tag, options);
 };
+//# sourceMappingURL=tracing.utils.js.map

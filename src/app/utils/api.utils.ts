@@ -12,19 +12,19 @@ const { FORMAT_HTTP_HEADERS } = require('opentracing');
  */
 export const apiCall = async function (apiOptions, span) {
 
-    let apiCallSpan = global[ "tracer" ].startSpan("api-call", { childOf: span });
+    let apiCallSpan = global["tracer"].startSpan("api-call", { childOf: span });
 
     try {
 
         apiOptions.headers = apiOptions.headers || {
             Accept: 'application/json;charset=UTF-8'
-		};
+        };
 
-		apiOptions.responseType = apiOptions.responseType || 'json';
+        apiOptions.responseType = apiOptions.responseType || 'json';
 
-		apiOptions.method = apiOptions.method || 'POST';
+        apiOptions.method = apiOptions.method || 'POST';
 
-        global[ "tracer" ].inject(apiCallSpan, FORMAT_HTTP_HEADERS, apiOptions.headers);
+        global["tracer"].inject(apiCallSpan, FORMAT_HTTP_HEADERS, apiOptions.headers);
 
         log("info", {
             msg: "Routing",

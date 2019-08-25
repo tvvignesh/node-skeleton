@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let config = require('../../config/config');
+const error_utils_1 = require("../utils/error.utils");
 const auth_utils_1 = require("../utils/auth.utils");
 exports.authenticate = function (req, res, next) {
     if (req.headers.authorization === config.authorization) {
@@ -21,7 +22,10 @@ exports.resolveToken = function (req, res, next) {
         });
     }
     let shouldAllow = true;
-    console.log(decoded);
+    error_utils_1.log('info', {
+        message: 'Resolving token',
+        decoded: decoded
+    });
     if (shouldAllow) {
         next();
     }

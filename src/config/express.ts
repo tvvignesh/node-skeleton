@@ -112,9 +112,9 @@ module.exports = function () {
     // Assume 404 since no middleware responded
     app.use(function (req, res) {
         log('error', {
-			message: 'Page Not Found - ' + req.url,
-			payload: req.body || req.query
-		});
+            message: 'Page Not Found - ' + req.url,
+            payload: req.body || req.query
+        });
         res.render(path.join(__dirname, "../app/views/error/404"), {
             head: {
                 title: 'Page Not Found'
