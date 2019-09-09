@@ -1,55 +1,43 @@
 'use strict';
 
-/**
- * Module dependencies.
- */
-let _ = require('lodash'),
-    glob = require('glob');
+export let config = {
+    app: {
+        title: 'Node Skeleton',
+        description: 'Node Skeleton',
+        url: 'http://localhost:8085'
+    },
+    port: process.env.NODEJS_PORT || 8085,
+    hostname: process.env.NODEJS_IP || 'localhost',
+    authorization: 'mysecrettoken',
 
-/**
- * Load app configurations
- */
-module.exports = _.extend(
-    require('./env/all'),
-    require('./env/' + process.env.NODE_ENV) || {}
-);
+    jwt: {
+        issuer: process.env.JWT_ISSUER || 'node-skeleton'
+    },
 
-/**
- * Get files by glob patterns
- */
-module.exports.getGlobbedFiles = function(globPatterns, removeRoot) {
-    // For context switching
-    let _this = this;
+    toggle: {
+        apidoc: process.env.TOGGLE_APIDOC || true,
+        log: {
+            files: process.env.ENABLE_LOG_FILE || false,
+            console: process.env.ENABLE_CONSOLE || true
+        }
+    },
 
-    // URL paths regex
-    let urlRegex = new RegExp('^(?:[a-z]+:)?//', 'i');
+    jaeger: {
+        host: process.env.JAEGER_HOST || 'localhost',
+        port: process.env.JAEGER_PORT || 6832
+    },
 
-    // The output array
-    let output = [];
-
-    // If glob pattern is array so we use each pattern in a recursive way, otherwise we use glob
-    if (_.isArray(globPatterns)) {
-        globPatterns.forEach(function(globPattern) {
-            output = _.union(
-                output,
-                _this.getGlobbedFiles(globPattern, removeRoot)
-            );
-        });
-    } else if (_.isString(globPatterns)) {
-        if (urlRegex.test(globPatterns)) {
-            output.push(globPatterns);
-        } else {
-            let files = glob.sync(globPatterns);
-            if (removeRoot) {
-                files = files.map(function(file) {
-                    return file.replace(removeRoot, '');
-                });
+    db: {
+        mssql: {
+            root: {
+                user: '',
+                password: '',
+                server: '',
+                database: '',
+                options: {
+                    trustedConnection: false
+                }
             }
-            output = _.union(output, files);
         }
     }
-
-    return output;
 };
-
-export {};

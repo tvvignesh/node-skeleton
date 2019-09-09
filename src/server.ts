@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = 'production';
 }
 
-let config = require('./config/config');
+import { config } from './config/config';
 
 // Init the express application
 let app = require('./config/express')();

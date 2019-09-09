@@ -3,10 +3,10 @@ version: "3"
 services:
   app-server:
     env_file:
-     - ./.env
+      - ./.env
     build:
       context: .
-      args: 
+      args:
         app_port: ${NODEJS_PORT}
         debug_port: ${DEBUG}
       #   app_db: app-db:30000
@@ -21,7 +21,6 @@ services:
       - "${DEBUG_PORT}"
     # links:
     #   - app-db
-      
   # app-db:
   #   container_name: app-db
   #   image: mongo:3.6.5
@@ -29,7 +28,6 @@ services:
   #     - "30000:27017"
   #   volumes:
   #     - mongodata:/data/db
-
 # volumes:
 #   mongodata:
 #       driver: local
