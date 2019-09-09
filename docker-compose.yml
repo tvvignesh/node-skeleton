@@ -6,6 +6,7 @@ services:
       - ./.env
     build:
       context: .
+      dockerfile: Dockerfile
       args:
         app_port: ${NODEJS_PORT}
         debug_port: ${DEBUG}

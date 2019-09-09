@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
 if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = 'production';
 }

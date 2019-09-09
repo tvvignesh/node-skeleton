@@ -1,34 +1,34 @@
-version: '3'
+version: "3"
 
 services:
-    app-server:
-        env_file:
-            - ./.env
-        build:
-            context: .
-            dockerfile: Dockerfile-prod
-            args:
-                app_port: ${NODEJS_PORT}
-                debug_port: ${DEBUG}
-            #   app_db: app-db:30000
-            #   app_env: alpha
-        command: npm run start
-        container_name: app-server
-        restart: always
-        volumes:
-            - ./dist:/app/server/dist
-        ports:
-            - '${SEVER_PORT}'
-            - '${DEBUG_PORT}'
-        # links:
-        #   - app-db
-    # app-db:
-    #   container_name: app-db
-    #   image: mongo:3.6.5
-    #   ports:
-    #     - "30000:27017"
-    #   volumes:
-    #     - mongodata:/data/db
+  app-server:
+    env_file:
+      - ./.env
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+      args:
+        app_port: ${NODEJS_PORT}
+        debug_port: ${DEBUG}
+      #   app_db: app-db:30000
+      #   app_env: alpha
+    command: npm run start
+    container_name: app-server
+    restart: always
+    volumes:
+      - ./dist:/app/server/dist
+    ports:
+      - "${SEVER_PORT}"
+      - "${DEBUG_PORT}"
+    # links:
+    #   - app-db
+  # app-db:
+  #   container_name: app-db
+  #   image: mongo:3.6.5
+  #   ports:
+  #     - "30000:27017"
+  #   volumes:
+  #     - mongodata:/data/db
 # volumes:
 #   mongodata:
 #       driver: local
