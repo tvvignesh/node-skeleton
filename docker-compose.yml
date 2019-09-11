@@ -16,7 +16,7 @@ services:
     container_name: app-server
     restart: always
     volumes:
-      - ./dist:/app/server/dist
+      - ./src:/app/server/src
     ports:
       - "${SEVER_PORT}"
       - "${DEBUG_PORT}"

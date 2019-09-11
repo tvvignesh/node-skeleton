@@ -15,8 +15,6 @@ services:
     command: npm run start
     container_name: app-server
     restart: always
-    volumes:
-      - ./dist:/app/server/dist
     ports:
       - "${SEVER_PORT}"
       - "${DEBUG_PORT}"

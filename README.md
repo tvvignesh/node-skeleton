@@ -34,6 +34,7 @@ You can find the article I wrote on this project here: [https://medium.com/techa
 1. Install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
 2. Clone/Download the repository and CD to it
 3. Run `docker-compose up` to get the containers installed and started.
+4. Run `docker-compose -f docker-compose-prod.yml up` to get the containers installed and started in production environment.
 
 ### Pulling & Running from Docker Hub
 
@@ -115,6 +116,16 @@ You can run your tests by using `npm run test` command. The project is bundled w
 ## Environmental Variables
 
 You can set up the environmental variables in the .env file and that will get used in files like docker-compose, Dockerfile, etc. In addition to this, you can set up the rest of the environmental configurations in `config/env/yourenv.ts` where yourenv can be anything and the respective configs will get loaded depending on env you set.
+
+## Development vs Production Environment
+
+The development and production environments has some notable differences in their implementation. Everything is handled automatically when run with the right compose file.
+
+1. Use of `nodemon` in development and directly running with `node` in production
+2. `Single Stage Build` for Docker image in development and `Multi Stage Build` for Docker image in production
+3. `src` mounted as volume in development and `no volume mount` in production
+4. `All files copied` to container in development and `only necessary files copied` to container in production
+5. `devDependencies installed` in development but `devDependencies ignored` in production
 
 ## Compatibility
 
