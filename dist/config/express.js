@@ -1,7 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 let fs = require('fs'), http = require('http'), https = require('https'), path = require('path');
-let express = require('express'), morgan = require('morgan'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), xss = require('xss-clean'), swaggerUi = require('swagger-ui-express'), YAML = require('yamljs'), glob = require('glob');
+let express = require('express'), bodyParser = require('body-parser'), methodOverride = require('method-override'), helmet = require('helmet'), mustacheExpress = require('mustache-express'), xss = require('xss-clean'), swaggerUi = require('swagger-ui-express'), YAML = require('yamljs'), glob = require('glob');
 const config_1 = require("../config/config");
 const error_utils_1 = require("../app/utils/error.utils");
 module.exports = function () {
@@ -22,6 +22,7 @@ module.exports = function () {
     app.set('view engine', 'server.view.html');
     app.set('views', path.join(__dirname, '../app/views/'));
     if (process.env.NODE_ENV === 'development') {
+        let morgan = require('morgan');
         app.use(morgan('dev'));
         app.set('view cache', false);
     }
@@ -32,6 +33,7 @@ module.exports = function () {
         app.locals.cache = 'memory';
     }
     else if (process.env.NODE_ENV === 'secure') {
+        let morgan = require('morgan');
         app.use(morgan('dev'));
     }
     app.use(bodyParser.urlencoded({
