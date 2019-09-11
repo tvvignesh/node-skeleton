@@ -6,13 +6,13 @@ services:
       - ./.env
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-prod
       args:
         app_port: ${NODEJS_PORT}
         debug_port: ${DEBUG}
       #   app_db: app-db:30000
       #   app_env: alpha
-    command: npm run debug
+    command: npm run start
     container_name: app-server
     restart: always
     volumes:

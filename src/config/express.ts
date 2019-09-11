@@ -17,10 +17,10 @@ let express = require('express'),
     mustacheExpress = require('mustache-express'),
     xss = require('xss-clean'),
     swaggerUi = require('swagger-ui-express'),
-    YAML = require('yamljs');
+    YAML = require('yamljs'),
+    glob = require('glob');
 
-let config = require('./config');
-
+import { config } from '../config/config';
 import { log } from '../app/utils/error.utils';
 
 // let schema = require('../schema/schema').schema;
@@ -110,9 +110,13 @@ module.exports = function() {
     }
 
     // Globbing routing files
-    config.getGlobbedFiles('./**/routes/**/*.js').forEach(function(routePath) {
+    glob.sync('./**/routes/**/*.js').forEach(function(routePath) {
         require(path.resolve(routePath))(app);
     });
+
+    // config.getGlobbedFiles('./**/routes/**/*.js').forEach(function(routePath) {
+    //     require(path.resolve(routePath))(app);
+    // });
 
     // Config Public Folder for Static Content
     app.use(express.static(path.join(__dirname, '../app/public')));

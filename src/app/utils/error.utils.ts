@@ -1,5 +1,5 @@
 const { Tags } = require('opentracing');
-const config = require('../../config/config');
+import { config } from '../../config/config';
 const logger = require('winston');
 
 let transports = [];

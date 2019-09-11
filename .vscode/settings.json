@@ -1,21 +1,28 @@
 {
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/dist": true
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.lintTask.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": [
+    {
+      "language": "typescript",
+      "autoFix": true
     },
-    "editor.formatOnSave": true,
-    "editor.detectIndentation": false,
-    "eslint.enable":true,
-    "eslint.autoFixOnSave":  true,
-    "eslint.lintTask.enable": true,
-    "eslint.alwaysShowStatus": true,
-    "eslint.validate": [
-      {"language":  "typescript",  "autoFix":  true  },
-      {"language":  "typescriptreact",  "autoFix":  true  },
-      "javascript",
-      "javascriptreact"
-    ],
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    },
+    "javascript",
+    "javascriptreact"
+  ],
+  "telemetry.enableCrashReporter": false,
+"telemetry.enableTelemetry": false,
+"editor.insertSpaces": false
 }

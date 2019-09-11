@@ -1,5 +1,6 @@
 'use strict';
-module.exports = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.config = {
     app: {
         title: 'Node Skeleton',
         description: 'Node Skeleton',

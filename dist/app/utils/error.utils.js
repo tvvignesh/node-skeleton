@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { Tags } = require('opentracing');
-const config = require('../../config/config');
+const config_1 = require("../../config/config");
 const logger = require('winston');
 let transports = [];
 let dateStr = new Date().toISOString();
-if (config.toggle.log.files) {
+if (config_1.config.toggle.log.files) {
     transports.push(new logger.transports.File({
         filename: 'logs/' + dateStr + '-error.log',
         level: 'error'
@@ -15,7 +15,7 @@ if (config.toggle.log.files) {
         level: 'info'
     }));
 }
-if (config.toggle.log.console) {
+if (config_1.config.toggle.log.console) {
     transports.push(new logger.transports.Console());
 }
 logger.configure({

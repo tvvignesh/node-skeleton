@@ -1,30 +1,40 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-let _ = require('lodash'), glob = require('glob');
-module.exports = _.extend(require('./env/all'), require('./env/' + process.env.NODE_ENV) || {});
-module.exports.getGlobbedFiles = function (globPatterns, removeRoot) {
-    let _this = this;
-    let urlRegex = new RegExp('^(?:[a-z]+:)?//', 'i');
-    let output = [];
-    if (_.isArray(globPatterns)) {
-        globPatterns.forEach(function (globPattern) {
-            output = _.union(output, _this.getGlobbedFiles(globPattern, removeRoot));
-        });
-    }
-    else if (_.isString(globPatterns)) {
-        if (urlRegex.test(globPatterns)) {
-            output.push(globPatterns);
+exports.config = {
+    app: {
+        title: 'Node Skeleton',
+        description: 'Node Skeleton',
+        url: 'http://localhost:8085'
+    },
+    port: process.env.NODEJS_PORT || 8085,
+    hostname: process.env.NODEJS_IP || 'localhost',
+    authorization: 'mysecrettoken',
+    jwt: {
+        issuer: process.env.JWT_ISSUER || 'node-skeleton'
+    },
+    toggle: {
+        apidoc: process.env.TOGGLE_APIDOC || true,
+        log: {
+            files: process.env.ENABLE_LOG_FILE || false,
+            console: process.env.ENABLE_CONSOLE || true
         }
-        else {
-            let files = glob.sync(globPatterns);
-            if (removeRoot) {
-                files = files.map(function (file) {
-                    return file.replace(removeRoot, '');
-                });
+    },
+    jaeger: {
+        host: process.env.JAEGER_HOST || 'localhost',
+        port: process.env.JAEGER_PORT || 6832
+    },
+    db: {
+        mssql: {
+            root: {
+                user: '',
+                password: '',
+                server: '',
+                database: '',
+                options: {
+                    trustedConnection: false
+                }
             }
-            output = _.union(output, files);
         }
     }
-    return output;
 };
 //# sourceMappingURL=config.js.map
