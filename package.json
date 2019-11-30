@@ -8,7 +8,7 @@
         "url": "https://github.com/tvvignesh/node-skeleton.git"
     },
     "scripts": {
-        "build": "npx tsc && npx copyfiles -u 1 src/app/**/*.html src/app/**/*.css src/app/public/**/*.* src/app/views/**/*.* dist/",
+        "build": "npx tsc && npx copyfiles -u 1 -e \"src/**/*.ts\" \"src/**/*.*\" dist/",
         "watch": "tsc -w -p ./",
         "debug": "npx cross-env NODE_ENV=development nodemon --nolazy ./dist/server.js",
         "docker-debug": "npm run build && docker-compose up",
