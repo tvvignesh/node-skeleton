@@ -10,7 +10,7 @@ const { FORMAT_HTTP_HEADERS } = require('opentracing');
  * @param span
  * @param method
  */
-export const apiCall = async function(apiOptions, span) {
+export const apiCall = async function (apiOptions, span) {
     let apiCallSpan = global['tracer'].startSpan('api-call', { childOf: span });
 
     try {

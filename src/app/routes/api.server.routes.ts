@@ -8,7 +8,7 @@ import {
 } from '../controllers/auth.server.controller';
 import { helloWorld } from '../controllers/api.server.controller';
 
-module.exports = function(app) {
+module.exports = function (app) {
     app.route('/hello').post(authenticate, helloWorld);
 
     app.route('/hello').get(resolveToken, resolveSecret, helloWorld);

@@ -6,7 +6,7 @@ import { log } from './error.utils';
 /**
  * @param serviceName
  */
-export const initTracer = function(
+export const initTracer = function (
     serviceName,
     projectName = config.app.title,
     headers = {}
@@ -59,7 +59,7 @@ export const initTracer = function(
     return parentSpan;
 };
 
-export const startSpan = function(tag, options = {}) {
+export const startSpan = function (tag, options = {}) {
     if (!global['tracer']) {
         global['tracer'] = initTracer('ml-platform');
     }

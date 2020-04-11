@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ava_1 = require("ava");
-ava_1.default('foo', t => {
+ava_1.default('foo', (t) => {
     t.pass();
 });
 ava_1.default('bar', (t) => __awaiter(void 0, void 0, void 0, function* () {

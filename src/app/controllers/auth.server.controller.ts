@@ -6,7 +6,7 @@ import { signJWT, verifyJWT } from '../utils/auth.utils';
 /**
  * AUTHENTICATION MIDDLEWARE FUNCTION
  */
-export const authenticate = function(req, res, next) {
+export const authenticate = function (req, res, next) {
     if (req.headers.authorization === config.authorization) {
         next();
     } else {
@@ -23,7 +23,7 @@ export const authenticate = function(req, res, next) {
  * @param res
  * @param next
  */
-export const resolveToken = function(req, res, next) {
+export const resolveToken = function (req, res, next) {
     let token = req.headers.authorization;
 
     let decoded = verifyJWT(token, {});
@@ -59,7 +59,7 @@ export const resolveToken = function(req, res, next) {
  * @param res
  * @param next
  */
-export const resolveSecret = function(req, res, next) {
+export const resolveSecret = function (req, res, next) {
     let secret = req.headers.secret;
 
     // Modify this to add your own verification from the DB. If success, allow
@@ -80,7 +80,7 @@ export const resolveSecret = function(req, res, next) {
  * @param req
  * @param res
  */
-export const generateAPICredentials = function(req, res) {
+export const generateAPICredentials = function (req, res) {
     // When generating do a check to see if the user is allowed to have access to the API
 
     let shouldAllow = true;

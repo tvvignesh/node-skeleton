@@ -16,7 +16,7 @@ let privateKEY = fs.readFileSync(
         'utf8'
     );
 
-export const signJWT = function(payload, $Options) {
+export const signJWT = function (payload, $Options) {
     /*
      sOptions = {
       issuer: "Authorizaxtion/Resource/This server",
@@ -36,7 +36,7 @@ export const signJWT = function(payload, $Options) {
     return jwt.sign(payload, privateKEY, signOptions);
 };
 
-export const verifyJWT = function(token, $Options) {
+export const verifyJWT = function (token, $Options) {
     /*
      vOption = {
       issuer: "Authorization/Resource/This server",
@@ -59,7 +59,7 @@ export const verifyJWT = function(token, $Options) {
     }
 };
 
-export const decodeJWT = function(token) {
+export const decodeJWT = function (token) {
     return jwt.decode(token, { complete: true });
     // returns null if token is invalid
 };

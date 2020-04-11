@@ -345,7 +345,7 @@
         ],
         "template-tag-spacing": ["error", "never"],
         "unicode-bom": ["error", "never"],
-        "arrow-parens": ["error", "as-needed"],
+        "arrow-parens": ["error", "always"],
         "arrow-spacing": [
             "error",
             {

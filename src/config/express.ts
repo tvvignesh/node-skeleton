@@ -26,7 +26,7 @@ import { log } from '../app/utils/error.utils';
 
 // import {schema as schema} from '../schema/schema';
 
-module.exports = function() {
+module.exports = function () {
     // Initialize express app
     let app = express();
 
@@ -35,7 +35,7 @@ module.exports = function() {
     app.locals.description = config.app.description;
 
     // Passing the request url to environment locals
-    app.use(function(req, res, next) {
+    app.use(function (req, res, next) {
         if (config.app.url) {
             app.locals.url = config.app.url + ':' + config.port;
         } else {
@@ -91,7 +91,7 @@ module.exports = function() {
     app.use(helmet.ieNoOpen());
     app.disable('x-powered-by');
 
-    app.use(function(req, res, next) {
+    app.use(function (req, res, next) {
         res.header('Access-Control-Allow-Origin', '*');
         res.header(
             'Access-Control-Allow-Headers',
@@ -111,7 +111,7 @@ module.exports = function() {
     }
 
     // Globbing routing files
-    glob.sync('./**/routes/**/*.js').forEach(function(routePath) {
+    glob.sync('./**/routes/**/*.js').forEach(function (routePath) {
         require(path.resolve(routePath))(app);
     });
 
@@ -123,7 +123,7 @@ module.exports = function() {
     app.use(express.static(path.join(__dirname, '../app/public')));
 
     // Assume 404 since no middleware responded
-    app.use(function(req, res) {
+    app.use(function (req, res) {
         log('error', {
             message: 'Page Not Found - ' + req.url,
             payload: req.body || req.query

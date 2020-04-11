@@ -7,22 +7,16 @@
   "editor.formatOnSave": true,
   "editor.detectIndentation": false,
   "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
   "eslint.lintTask.enable": true,
   "eslint.alwaysShowStatus": true,
-  "eslint.validate": [
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    },
+  "eslint.validate": ["typescript","typescriptreact",
     "javascript",
     "javascriptreact"
   ],
   "telemetry.enableCrashReporter": false,
 "telemetry.enableTelemetry": false,
-"editor.insertSpaces": false
+"editor.insertSpaces": false,
+"editor.codeActionsOnSave": {
+	"source.fixAll.eslint": true
+}
 }

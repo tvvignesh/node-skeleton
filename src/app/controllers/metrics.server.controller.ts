@@ -46,7 +46,7 @@ const testSummary = new client.Summary({
 /**
  * INITIALIZE METRICS
  */
-const initCounters = function() {
+const initCounters = function () {
     testCounter.inc(
         {
             label1: 'Test Label'
@@ -65,7 +65,7 @@ initCounters();
 
 const mergedRegistries = client.Registry.merge([register, client.register]);
 
-export const getMetrics = function(req, res) {
+export const getMetrics = function (req, res) {
     res.set('Content-Type', mergedRegistries.contentType);
     res.end(mergedRegistries.metrics());
 };

@@ -33,7 +33,7 @@ logger.configure({
 /**
  * @param serviceName
  */
-export const log = function(
+export const log = function (
     level,
     payload,
     span = undefined,
